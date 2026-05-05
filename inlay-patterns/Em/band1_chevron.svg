@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="0.4010in" height="0.5000in" viewBox="0 0 0.4010 0.5000" preserveAspectRatio="xMidYMid meet">
+  <title>Em band1/2 chevron</title>
+  <desc>Inlay pattern. Origin at bottom-left. Units in inches.</desc>
+  <g fill="#7A4A2A" stroke="#3A1F0A" stroke-width="0.005" transform="translate(0,0.5000) scale(1,-1)">
+    <polygon points="0.0000,0.0000 0.4010,0.0000 0.4010,0.5000 0.0000,0.5000" />
+    <line x1="0.0000" y1="-0.0750" x2="0.2005" y2="0.0750" stroke="#3A1F0A" stroke-width="0.008" />
+    <line x1="0.2005" y1="0.0750" x2="0.4010" y2="-0.0750" stroke="#3A1F0A" stroke-width="0.008" />
+    <line x1="0.0000" y1="0.1750" x2="0.2005" y2="0.3250" stroke="#3A1F0A" stroke-width="0.008" />
+    <line x1="0.2005" y1="0.3250" x2="0.4010" y2="0.1750" stroke="#3A1F0A" stroke-width="0.008" />
+    <line x1="0.0000" y1="0.4250" x2="0.2005" y2="0.5750" stroke="#3A1F0A" stroke-width="0.008" />
+    <line x1="0.2005" y1="0.5750" x2="0.4010" y2="0.4250" stroke="#3A1F0A" stroke-width="0.008" />
+  </g>
+</svg>
