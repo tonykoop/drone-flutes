@@ -1,0 +1,73 @@
+{
+  "packet_id": "DRN-FAM-001",
+  "instrument": "Native American Drone Flute Family",
+  "family": "open-pipe",
+  "pipeline": "cnc-lathe",
+  "status": "in-progress",
+  "date": "2026-05-05",
+  "builder": "Tony Koop",
+  "shop": "Maker Nexus, South Bay",
+  "members": [
+    "DRN-Am",
+    "DRN-Fsm",
+    "DRN-Em",
+    "DRN-Dm"
+  ],
+  "sister_repos": [
+    "flutes",
+    "fujara",
+    "transverse-flute",
+    "shakuhachi"
+  ],
+  "done_bar_ref": "flutes",
+  "deliverables": {
+    "design_workbook": "Drone-Flutes-Design.xlsx",
+    "design_md": "design.md",
+    "family_spec": "family-spec.csv",
+    "bom": "bom.csv",
+    "sourcing": "sourcing.csv",
+    "cut_list": "cut-list.csv",
+    "validation": "validation.csv",
+    "assembly_manual": "assembly-manual.md",
+    "supplier_rfq": "supplier-rfq.md",
+    "visual_bom_brief": "visual-bom-brief.md",
+    "drawing_brief": "drawing-brief.md",
+    "wolfram_starter": "wolfram-starter.wl",
+    "risks": "risks.md",
+    "capstone_deck_md": "capstone-deck.md",
+    "capstone_deck_pptx": "capstone-deck.pptx",
+    "print_packet_md": "print-packet.md",
+    "print_packet_html": "print-packet.html",
+    "print_packet_pdf": "print-packet.pdf",
+    "drawings": [
+      "drawings/Am.svg",
+      "drawings/Fsm.svg",
+      "drawings/Em.svg",
+      "drawings/Dm.svg",
+      "drawings/assembly.svg",
+      "drawings/family-overview.svg"
+    ],
+    "inlay_patterns": "inlay-patterns/",
+    "sw_reference": "sw-reference/Drone-Flutes-SolidWorks-MasterLayout.docx",
+    "build_method": "Drone-Flutes-BOM-Build-Method.docx",
+    "site": "site/index.html"
+  },
+  "physics": {
+    "model": "open-open pipe with NAF K2 empirical correction",
+    "speed_of_sound_in_per_s": 13552,
+    "reference_temp_F": 68,
+    "concert_pitch_hz": 440,
+    "scale": "Pentatonic minor (NAF Mode 1/4)",
+    "scale_offsets_semitones": [
+      3,
+      5,
+      7,
+      8,
+      10,
+      12
+    ]
+  },
+  "validation_target_cents": 5,
+  "estimated_cost_usd": 516,
+  "estimated_build_days": 42
+}

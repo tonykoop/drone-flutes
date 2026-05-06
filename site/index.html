@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone Flute Family — DRN-FAM-001 · Tony Koop</title>
+<meta name="description" content="A four-member family of Native American drone flutes — Am, F#m, Em, Dm — built on a parametric design pipeline with hybrid CNC + lathe construction and Broinwood-style CNC inlay.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <p class="accent">Native American style · DRN-FAM-001</p>
+  <h1>Drone Flute Family</h1>
+  <p class="lead">A four-member family of Native American drone flutes. Walnut bodies with hard-maple CNC inlay. Each flute ships with a swappable drone block set — unison, fifth-below, octave-below.</p>
+  <p class="keys">F#m · Em · Dm · Am</p>
+  <p class="meta">Tony Koop · Maker Nexus, South Bay · 2026-05-05</p>
+</header>
+
+<main>
+
+<section id="what-this-is">
+  <h2>What this is</h2>
+  <p class="lead-text">Native American style flutes have a distinctive split-chamber architecture: a Slow Air Chamber at the mouth end, a totem block ("bird") that directs air over a sharpened splitting edge, and an open-pipe bore voiced by six finger holes in a pentatonic minor scale. <strong>Drone flutes</strong> add a second parallel chamber that produces a sustained tone alongside the melody — like a low-tech bagpipe drone you can shape with your breath.</p>
+  <p class="lead-text">This packet covers a family of four such flutes, in the most popular keys for the form. Each flute ships with three swappable drone blocks (unison, perfect fifth below, octave below), so the player can change drone tuning without retuning the melody side.</p>
+  <div class="callout">
+    <span class="label">Aesthetic references</span>
+    <p style="margin: 0.3rem 0 0;">Drone-flute form: <a href="https://elementalflutes.com/gallery">elementalflutes.com/gallery</a>. CNC inlay style: <a href="https://broinwood.com">broinwood.com</a>. Engineering reference: the <code>flutes</code> repo for NAF K2 empirical corrections from 150+ measured flutes.</p>
+  </div>
+</section>
+
+<section id="the-design">
+  <h2>The design</h2>
+  <p class="lead-text">Open-open pipe physics with end corrections and Tony's empirical NAF K2 bore-size correction. Hole positions follow <code>pos_from_foot = L_acoustic_corrected × (1 − f₀/f_hole)</code>. The drone chamber is a separate parallel bore in the same body, with its own bore_ID, K2 correction, and acoustic length.</p>
+
+  <h3>Family table</h3>
+  <table>
+    <thead><tr><th>Member</th><th>Key</th><th>f₀ (Hz)</th><th>Bore ID</th><th>L_total</th><th>Chamber:bore</th></tr></thead>
+    <tbody>
+      <tr><td>DRN-Am</td><td>Am</td><td class="num">440.000</td><td class="num">0.750"</td><td class="num">21.97"</td><td class="num">20.4</td></tr>
+      <tr><td>DRN-Fsm</td><td>F#m</td><td class="num">369.994</td><td class="num">0.875"</td><td class="num">24.99"</td><td class="num">21.0</td></tr>
+      <tr><td>DRN-Em</td><td>Em</td><td class="num">329.628</td><td class="num">1.000"</td><td class="num">27.23"</td><td class="num">20.7</td></tr>
+      <tr><td>DRN-Dm</td><td>Dm</td><td class="num">293.665</td><td class="num">1.125"</td><td class="num">29.82"</td><td class="num">20.8</td></tr>
+    </tbody>
+  </table>
+  <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">All chamber-to-bore ratios sit in Tony's 17–21 sweet spot.</p>
+
+  <h3>Family overview drawing</h3>
+  <div class="drawing-frame">
+    <object type="image/svg+xml" data="assets/drawings/family-overview.svg">Family overview drawing</object>
+  </div>
+  <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">All four flutes shown to common scale, foot-aligned. Hole positions shift as fundamental changes; total length scales inversely with frequency.</p>
+</section>
+
+<section id="the-build">
+  <h2>The build</h2>
+  <p class="lead-text">The construction is a hybrid: the bore is cut on a CNC router (in two halves of a split blank, then glued), the round exterior is turned on a lathe, and the octagonal facets and inlay pockets are then cut back on the CNC. Every flute uses the same workflow; only the dimensions in the design table change.</p>
+
+  <div class="build-steps">
+    <div class="step">
+      <h4>Stock prep</h4>
+      <p>Mill walnut blanks to S4S. Verify long-grain runout under 1:12. Mark center reference lines and drill three 3/16" datum holes per blank. Acclimate seven days.</p>
+    </div>
+    <div class="step">
+      <h4>Split-body CNC</h4>
+      <p>Bandsaw each blank along centerline, plane mating faces, then route the bore profile, SAC pocket, and splitting edge wall on each half using the dowel-and-vacuum fixture.</p>
+    </div>
+    <div class="step">
+      <h4>Glue + lathe round</h4>
+      <p>Titebond II, six clamps, 24-hour cure. Mount glued blank between centers and turn to body_OD_round, leaving a 0.05" facet allowance.</p>
+    </div>
+    <div class="step">
+      <h4>CNC faceting</h4>
+      <p>V-block jig with eight 22.5° rotations. Each pass flattens one facet. After eight rotations the body is a clean octagon ready for inlay.</p>
+    </div>
+    <div class="step">
+      <h4>Tone holes &amp; window</h4>
+      <p>Drill the six finger holes from the foot datum. Plunge the window with a 1/16" upcut spiral and finish the splitting edge with a chisel. Tune each note with a chromatic tuner.</p>
+    </div>
+    <div class="step">
+      <h4>CNC inlay</h4>
+      <p>Pocket each band and the feature panel on the body, then cut matching plugs from 1/16" maple at +0.001" oversize for an interference fit. Glue in with thin CA, surface-sand flush.</p>
+    </div>
+    <div class="step">
+      <h4>Drone blocks &amp; bird</h4>
+      <p>Lathe-turn three drone blocks per flute (unison, fifth, octave). Cut and laser-engrave bird blocks. Slip-fit clearance on drone tenons is 0.005".</p>
+    </div>
+    <div class="step">
+      <h4>Finish &amp; tune</h4>
+      <p>Tru-Oil, 4–6 coats, sand 600 between coats. Cure seven days. Final tune with chromatic tuner; record measured cents error in <code>validation.csv</code>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="the-numbers">
+  <h2>The numbers</h2>
+  <h3>Bill of materials (excerpt)</h3>
+  <table>
+    <thead><tr><th>#</th><th>Part</th><th class="num">Qty</th><th>Material</th><th>Supplier</th><th class="num">Line $</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>1.1</td>
+        <td>Body blank, Am+F#m</td>
+        <td class="num">2</td>
+        <td>Black walnut</td>
+        <td>Hardwoods to Get</td>
+        <td class="num">$44</td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>Body blank, Em+Dm</td>
+        <td class="num">2</td>
+        <td>Black walnut</td>
+        <td>Hardwoods to Get</td>
+        <td class="num">$60</td>
+      </tr>
+      <tr>
+        <td>1.3</td>
+        <td>Inlay band stock</td>
+        <td class="num">2</td>
+        <td>Hard maple</td>
+        <td>Bell Forest</td>
+        <td class="num">$16</td>
+      </tr>
+      <tr>
+        <td>1.4</td>
+        <td>Inlay feature panel stock</td>
+        <td class="num">1</td>
+        <td>Hard maple</td>
+        <td>Bell Forest</td>
+        <td class="num">$14</td>
+      </tr>
+      <tr>
+        <td>1.5</td>
+        <td>Bird block stock</td>
+        <td class="num">1</td>
+        <td>Black walnut (1.1 offcut)</td>
+        <td>offcut</td>
+        <td class="num">$0</td>
+      </tr>
+      <tr>
+        <td>1.6</td>
+        <td>Drone block stock</td>
+        <td class="num">1</td>
+        <td>Black walnut</td>
+        <td>Hardwoods to Get</td>
+        <td class="num">$15</td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>Leather lacing</td>
+        <td class="num">4</td>
+        <td>Leather</td>
+        <td>Tandy</td>
+        <td class="num">$6</td>
+      </tr>
+      <tr>
+        <td>2.2</td>
+        <td>Tru-Oil</td>
+        <td class="num">1</td>
+        <td>Tung-oil/varnish blend</td>
+        <td>Brownells</td>
+        <td class="num">$10</td>
+      </tr>
+      <tr>
+        <td>2.3</td>
+        <td>Howards Feed-N-Wax</td>
+        <td class="num">1</td>
+        <td>Carnauba+orange oil</td>
+        <td>Hardware store</td>
+        <td class="num">$10</td>
+      </tr>
+      <tr>
+        <td>2.4</td>
+        <td>Painter tape, 1 in</td>
+        <td class="num">1</td>
+        <td>Crepe paper</td>
+        <td>Hardware store</td>
+        <td class="num">$6</td>
+      </tr>
+      <tr>
+        <td>2.5</td>
+        <td>Sandpaper assortment</td>
+        <td class="num">1</td>
+        <td>Aluminum oxide</td>
+        <td>Hardware store</td>
+        <td class="num">$15</td>
+      </tr>
+      <tr>
+        <td>2.6</td>
+        <td>Wood glue</td>
+        <td class="num">1</td>
+        <td>PVA</td>
+        <td>Hardware store</td>
+        <td class="num">$8</td>
+      </tr>
+      <tr>
+        <td>2.7</td>
+        <td>CA glue, thin</td>
+        <td class="num">1</td>
+        <td>Cyanoacrylate</td>
+        <td>Starbond</td>
+        <td class="num">$10</td>
+      </tr>
+      <tr>
+        <td>2.8</td>
+        <td>CA accelerator</td>
+        <td class="num">1</td>
+        <td>Aerosol</td>
+        <td>Starbond</td>
+        <td class="num">$8</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">Full BOM in <code>bom.csv</code>. First-build total: <strong>$516</strong> ($193 materials + $245 one-time tooling + $78 hardware/finish).</p>
+</section>
+
+<section id="tuning-validation">
+  <h2>Tuning &amp; validation</h2>
+  <p class="lead-text">Each finished flute is tuned with a chromatic tuner against the predicted frequencies. Pass band is ±5 cents per note. Measurements are recorded in <code>validation.csv</code> and fed into Tony's per-family corrections database — so the next family in this lineage benefits from this family's empirical data.</p>
+  <table>
+    <thead><tr><th>Member</th><th>Note</th><th class="num">Target Hz</th><th class="num">Tolerance</th><th>Measured</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>DRN-Am</td>
+        <td>fundamental</td>
+        <td class="num">440.000</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Am</td>
+        <td>m3</td>
+        <td class="num">523.251</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Am</td>
+        <td>P5</td>
+        <td class="num">659.255</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Am</td>
+        <td>oct</td>
+        <td class="num">880.000</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Fsm</td>
+        <td>fundamental</td>
+        <td class="num">369.994</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Fsm</td>
+        <td>m3</td>
+        <td class="num">439.999</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Fsm</td>
+        <td>P5</td>
+        <td class="num">554.365</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Fsm</td>
+        <td>oct</td>
+        <td class="num">739.988</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Em</td>
+        <td>fundamental</td>
+        <td class="num">329.628</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Em</td>
+        <td>m3</td>
+        <td class="num">391.996</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Em</td>
+        <td>P5</td>
+        <td class="num">493.884</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Em</td>
+        <td>oct</td>
+        <td class="num">659.256</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Dm</td>
+        <td>fundamental</td>
+        <td class="num">293.665</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Dm</td>
+        <td>m3</td>
+        <td class="num">349.229</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Dm</td>
+        <td>P5</td>
+        <td class="num">440.000</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+      <tr>
+        <td>DRN-Dm</td>
+        <td>oct</td>
+        <td class="num">587.330</td>
+        <td class="num">±5 ¢</td>
+        <td><em>pending build</em></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="risks">
+  <h2>Known risks</h2>
+  <p class="lead-text">A red-team failure-mode walk lives in <code>risks.md</code>. The headline items:</p>
+  <div class="risk-grid">
+    <div class="risk-card med">
+      <p><span class="id">A-1</span> <span class="title">Hole 6 (octave) sharp</span></p>
+      <p class="test">Tune-step inspection on each flute; capture a per-flute correction if &gt;+5 cents on more than 2 of 4.</p>
+    </div>
+    <div class="risk-card high">
+      <p><span class="id">A-2</span> <span class="title">Drone–melody chamber leak</span></p>
+      <p class="test">Pre-glue ridge-feel check on bore halves + post-glue isolated melody puff test.</p>
+    </div>
+    <div class="risk-card high">
+      <p><span class="id">S-1</span> <span class="title">Walnut splits along glue line</span></p>
+      <p class="test">Same-blank halves with matched MC; Type II glue + 6+ clamps; 40–50% RH storage.</p>
+    </div>
+    <div class="risk-card low">
+      <p><span class="id">E-1</span> <span class="title">Em/Dm reach for small hands</span></p>
+      <p class="test">5th-percentile span check: H1↔H6 must be &lt;6" for the lower-key flutes.</p>
+    </div>
+    <div class="risk-card med">
+      <p><span class="id">Su-2</span> <span class="title">Walnut sapwood streaks</span></p>
+      <p class="test">Order with explicit 'no visible sapwood' spec; reject if &gt;10% sapwood by area.</p>
+    </div>
+    <div class="risk-card low">
+      <p><span class="id">F-1</span> <span class="title">Inlay flush-sand removes too much</span></p>
+      <p class="test">Pre/post caliper at each band — diff must be &lt;0.005".</p>
+    </div>
+  </div>
+</section>
+
+<section id="family">
+  <h2>Family members</h2>
+  <p class="lead-text">Each member has the same workflow but its own bore size and total length. Click through for the per-member detail page.</p>
+  <div class="family-grid">
+    <div class="family-card">
+      <p class="key">Am</p>
+      <p class="freq">f₀ = 440.00 Hz</p>
+      <p class="dim">bore 0.750" · L 21.967"</p>
+      <a href="family/Am.html">Member detail →</a>
+    </div>
+    <div class="family-card">
+      <p class="key">F#m</p>
+      <p class="freq">f₀ = 369.99 Hz</p>
+      <p class="dim">bore 0.875" · L 24.987"</p>
+      <a href="family/Fsm.html">Member detail →</a>
+    </div>
+    <div class="family-card">
+      <p class="key">Em</p>
+      <p class="freq">f₀ = 329.63 Hz</p>
+      <p class="dim">bore 1.000" · L 27.225"</p>
+      <a href="family/Em.html">Member detail →</a>
+    </div>
+    <div class="family-card">
+      <p class="key">Dm</p>
+      <p class="freq">f₀ = 293.67 Hz</p>
+      <p class="dim">bore 1.125" · L 29.824"</p>
+      <a href="family/Dm.html">Member detail →</a>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <h2>Resources</h2>
+  <div class="resources">
+    <a class="resource" href="https://github.com/tonykoop/drone-flutes">
+      <span class="label">GitHub</span>
+      <span class="value">tonykoop/drone-flutes</span>
+    </a>
+    <a class="resource" href="../capstone-deck.pptx" download>
+      <span class="label">Capstone deck</span>
+      <span class="value">capstone-deck.pptx</span>
+    </a>
+    <a class="resource" href="../print-packet.pdf" download>
+      <span class="label">Print packet</span>
+      <span class="value">print-packet.pdf</span>
+    </a>
+    <a class="resource" href="../Drone-Flutes-Design.xlsx" download>
+      <span class="label">Design source</span>
+      <span class="value">Drone-Flutes-Design.xlsx</span>
+    </a>
+  </div>
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1.5rem;">Sister repos in the open-pipe woodwind cluster: <a href="https://github.com/tonykoop/flutes">flutes</a> · <a href="https://github.com/tonykoop/fujara">fujara</a> · <a href="https://github.com/tonykoop/transverse-flute">transverse-flute</a> · <a href="https://github.com/tonykoop/shakuhachi">shakuhachi</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Tony Koop · <a href="mailto:tonykoop@gmail.com">tonykoop@gmail.com</a> · Maker Nexus, South Bay</p>
+  <p style="opacity: 0.7;">DRN-FAM-001 · 2026-05-05 · Built with the instrument-maker-v4 skill</p>
+</footer>
+
+</body>
+</html>

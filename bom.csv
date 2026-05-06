@@ -1,0 +1,28 @@
+part_no,category,part_name,qty,units,spec,material,supplier,unit_cost_usd,line_total_usd,make_buy,drawing_ref,notes
+1.1,wood,"Body blank, Am+F#m",2,each,1.5×1.5×26 in S4S,Black walnut,Hardwoods to Get,22,44,buy,"drawings/Am.svg, drawings/Fsm.svg","One blank per flute (Am, F#m)."
+1.2,wood,"Body blank, Em+Dm",2,each,1.75×1.75×32 in S4S,Black walnut,Hardwoods to Get,30,60,buy,"drawings/Em.svg, drawings/Dm.svg",Larger cross-section for the lower keys.
+1.3,wood,Inlay band stock,2,sheet,1/16 × 2 × 24 in,Hard maple,Bell Forest,8,16,buy,inlay-patterns/,Resaw if needed.
+1.4,wood,Inlay feature panel stock,1,sheet,1/8 × 4 × 12 in (figured if available),Hard maple,Bell Forest,14,14,buy,inlay-patterns/*/feature_constellation.dxf,Quilted/curly preferred.
+1.5,wood,Bird block stock,1,each,1×1×10 in,Black walnut (1.1 offcut),offcut,0,0,make,drawings/bird-block.svg (TBD),Cut into 4 blocks (one per flute).
+1.6,wood,Drone block stock,1,each,1.75×1.75×18 in,Black walnut,Hardwoods to Get,15,15,buy,drawings/drone-block.svg (TBD),Yields 12 blocks: 3 per flute (U/5/8).
+2.1,hardware,Leather lacing,4,ft,3/16 natural latigo,Leather,Tandy,1.50,6,buy,assembly-manual.md,Bird block tie.
+2.2,finish,Tru-Oil,1,bottle,3 oz,Tung-oil/varnish blend,Brownells,10,10,buy,-,4-6 coats.
+2.3,finish,Howards Feed-N-Wax,1,tin,16 oz,Carnauba+orange oil,Hardware store,10,10,buy,-,Maintenance wax.
+2.4,consumables,"Painter tape, 1 in",1,roll,3M ScotchBlue,Crepe paper,Hardware store,6,6,buy,-,Mask glue squeezeout.
+2.5,consumables,Sandpaper assortment,1,pack,120/180/220/320/400/600,Aluminum oxide,Hardware store,15,15,buy,-,Final sand.
+2.6,consumables,Wood glue,1,bottle,Titebond II Premium 16 oz,PVA,Hardware store,8,8,buy,-,Body glue-up.
+2.7,consumables,"CA glue, thin",1,bottle,Starbond EM-02 2 oz,Cyanoacrylate,Starbond,10,10,buy,-,Inlay set + stabilization.
+2.8,consumables,CA accelerator,1,bottle,Starbond NCF,Aerosol,Starbond,8,8,buy,-,Cure CA fast.
+2.9,consumables,Foam applicators,20,each,Tru-Oil application,Foam,Amazon,0.25,5,buy,-,Lint-free finish.
+3.1,tooling,1/16 upcut spiral,1,each,"1/8 shank, 1/2 LOC",Solid carbide,IDC Woodcraft,22,22,buy,cnc/,Inlay + splitting edge.
+3.2,tooling,1/4 downcut spiral,1,each,"1/4 shank, 1 LOC",Solid carbide,IDC Woodcraft,32,32,buy,cnc/,Bore + SAC.
+3.3,tooling,1/2 downcut spiral,1,each,"1/2 shank, 1.25 LOC",Solid carbide,IDC Woodcraft,45,45,buy,cnc/,Faceting pass.
+3.4,tooling,3/4 ball end,1,each,"1/2 shank, 1.5 LOC",Solid carbide,IDC Woodcraft,58,58,buy,cnc/,Optional 3D detail.
+3.5,tooling,Brad-point drills,4,each,"1/4, 9/32, 5/16, 11/32",HSS,Lee Valley,5.50,22,buy,cnc/,Tone holes.
+3.6,tooling,Forstner bits,4,each,"5/8, 3/4, 7/8, 1 in",HSS,Lee Valley,12,48,buy,cnc/,Drone socket bores.
+4.1,files,"CNC G-code, bore profile",4,file,one per key,-,self,0,0,make,cnc/,Generated in V-Carve.
+4.2,files,"CNC G-code, facet pass",4,file,one per key,-,self,0,0,make,cnc/,-
+4.3,files,"CNC G-code, inlay pocket",12,file,3 bands × 4 keys,-,self,0,0,make,cnc/,-
+4.4,files,"CNC G-code, inlay plug",12,file,-,-,self,0,0,make,cnc/,Cut from maple stock.
+4.5,files,"CNC G-code, feature panel",4,file,pocket+plug,-,self,0,0,make,cnc/,-
+4.6,files,"CNC G-code, finger holes",4,file,six per flute,-,self,0,0,make,cnc/,-

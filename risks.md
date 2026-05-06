@@ -1,181 +1,107 @@
-# Risks — Drone Flute Set (F#m, Em, Dm, Am)
-
-Structured risks for the four-flute build. Each risk follows the v4 red-team specialist format: Symptom → Mechanism → Test → Mitigation → Severity. Severity scale is Low (cosmetic), Medium (performance-affecting), High (safety or hard-failure).
-
-This file is the red-team companion to the design workbook and build method. Run through it once before committing material; revisit after any drone-block or window-shape change.
-
----
-
-## Acoustic
-
-### Drone bore couples back into melody bore via the splitting edge
-
-**Symptom:** When playing a melody hole, you hear the drone interfere — beating, intermodulation, or the drone going slightly flat/sharp depending on which melody hole is open.
-
-**Mechanism:** The drone bore and melody bore share the same SAC (slow air chamber) feed. If the splitting edge geometry doesn't isolate the two flows, breath pressure spilling into the drone bore modulates the drone's effective length. The two bores aren't acoustically decoupled — they're side-by-side in the same body.
-
-**Test:** Play each melody hole sustained for 5+ seconds while monitoring the drone with a chromatic tuner on a separate channel. If drone cents reading wanders by more than ±5 cents across melody fingerings, coupling is too strong.
-
-**Mitigation:** Increase splitting-edge thickness in the SAC-to-drone-bore wall (`drone_isolation_wall` in `Master_Inputs`). Default is 0.125"; bump to 0.156" if coupling is heard. Alternatively, taper the drone bore inlet so its impedance is mismatched at the SAC junction.
-
-**Severity:** Medium
-
-### Drone block tenon humidity-fit drift
-
-**Symptom:** In summer (high RH), drone block won't insert without forcing. In winter (low RH), drone block falls out under its own weight, drifting tuning sharp by 5–15 cents.
-
-**Mechanism:** Walnut tenon expands radially with moisture; ID of body socket also expands but at a different rate (cross-grain vs long-grain, slightly different equilibrium moisture content). The fit goes from snug → tight → loose across an annual humidity cycle.
-
-**Test:** Build one block in winter shop conditions (~30% RH); measure tenon OD. Place in sealed jar with saturated KCl solution (~85% RH equivalent) for 7 days. Re-measure. Diameter delta > 0.003" → expect seasonal fit issues.
-
-**Mitigation:** Turn drone tenons in winter (when wood is at lower MC). Sand to fit just slightly snug. The fit will loosen in summer to comfortable, then return to snug in winter — the operating window centers on shop conditions.
-
-**Severity:** Medium
-
-### Hole 6 (octave) tunes sharp due to proximity to window
-
-**Symptom:** Octave tone hole reads consistently sharp by 8–20 cents across all four flutes; flatter holes (1–5) tune correctly.
-
-**Mechanism:** Hole 6 sits closest to the window. End correction at the window end of the bore is steeper than a free open-end because of the splitting-edge geometry. The standard `pos_from_foot = L_eff · (1 − f₀/f_hole)` formula assumes a uniform open-end correction, which underestimates the effective length toward the window.
-
-**Test:** After tuning holes 1–5 to within ±3 cents, measure hole 6. If consistently >5 cents sharp, the model is undershooting.
-
-**Mitigation:** Add a `hole_6_window_correction` global (in semitones) to `Master_Inputs`; subtract it from hole 6's offset in `Hole_Schedule` so the formula moves the hole slightly toward the foot. Calibrate empirically across the four-flute set; record the correction in the per-family corrections database via `record_measurement.py`.
-
-**Severity:** Medium
-
----
-
-## Structural
-
-### Bore mismatch at glue-up — split body halves drift on the datum pins
-
-**Symptom:** After Phase 3 glue-up and Phase 4 lathe rounding, the bore profile has a visible step where the two halves meet. Air leaks at the joint; tone is breathy across all notes.
-
-**Mechanism:** Datum holes drilled in Phase 1 are 3/16" but the dowels used for alignment are slightly undersize. Clamp pressure during glue-up shifts halves by 0.005–0.020".
-
-**Test:** After dry-fit, look at the bore from each end with a flashlight. Step or offset visible at the parting line is a fail.
-
-**Mitigation:** Use 3/16" *wood* dowels (slightly oversize after a steam soak), not metal pins. Insert dry, then soak briefly so they swell into the holes. Per build-method Phase 3, this is already in the build doc — verify on first prototype before committing the rest.
-
-**Severity:** High (a leaky bore makes the flute unsellable; have to reject the body and start over)
-
-### Splitting edge too thin — collapses under play
-
-**Symptom:** After 10–50 hours of play, splitting edge splinters or compresses. Breathy tone develops; replacement requires new body.
-
-**Mechanism:** The splitting edge is the thinnest feature in the flute. In Phase 7 it gets cut with a 1/16" upcut spiral; over-engagement leaves the wall too thin (<0.020"). Repeated breath pressure cycling fatigues the wall.
-
-**Test:** Measure splitting-edge wall thickness with feeler gauges or a thin caliper before Phase 11 finish. Below 0.020" is a fail.
-
-**Mitigation:** During Phase 7, leave 0.005" skin on the splitting edge during CNC. Finish with a small chisel and 320-grit sandpaper. Per the existing build method; verify with caliper before finishing.
-
-**Severity:** High
-
-### Inlay plug pops out under finish-cure stress
-
-**Symptom:** Plug separates from pocket after first or second coat of Tru-Oil. Wood movement during finish soak overcomes the 0.002" interference fit.
-
-**Mechanism:** Maple plug and walnut body have different equilibrium moisture content under finish. Finish penetrates and triggers a small moisture exchange; the differential expansion exceeds the fit tolerance briefly.
-
-**Test:** After Phase 8 inlay set, leave the body for 7 days at shop humidity. Tap each plug with a fingernail — plug should ring solid, not click loose. Any click = re-glue with thicker CA.
-
-**Mitigation:** Use thin CA glue (Starbond) for the initial set; backfill with thicker CA into any gap. Apply finish only after the 7-day humidity-equilibration window.
-
-**Severity:** Medium (re-glue is cheap but slows shipping)
-
----
-
-## Ergonomic
-
-### Hole spacing on Dm exceeds comfortable hand reach
-
-**Symptom:** Dm flute is the longest in the set (~30"). Holes 1 and 6 may span more than the ~9" comfortable reach for a 5th-percentile player's grip with the standard six-hole layout.
-
-**Mechanism:** Hole-position formula scales with bore length. Holes are at fixed *fractions* of `L_acoustic_corrected`. As `L` grows for low-pitched flutes, absolute hole spacing grows proportionally. For Dm at 29.8" with hole 1 at ~0.75 · L and hole 6 at ~0.4 · L, span between hole 1 and hole 6 is ~10.4".
-
-**Test:** Measure span from hole 1 to hole 6 on the Dm prototype. If >9", check hand-reach compatibility against intended player.
-
-**Mitigation:** For Dm, allow split-hand fingering (3 holes per hand). Document this in the assembly manual / README so a player isn't surprised. Alternative: offset hole 6 slightly toward foot (sacrificing some intonation accuracy for ergonomic playability) — only if reach is a hard constraint.
-
-**Severity:** Low (only affects players with smaller hands; documentation mitigates)
-
-### Drone-block-to-body angle awkward in standing play
-
-**Symptom:** Drone block protrudes at 90° from the body axis. In standing play with strap, the drone block's weight pulls the body off-axis and rotates it in the player's hands.
-
-**Mechanism:** The drone bore is parallel to the melody bore but on the opposite side of the body. Drone block + tenon adds ~3" of mass at one side of the body; the moment arm exceeds neutral grip.
-
-**Test:** Hold finished flute in standing playing position with strap. If body rotates noticeably or strap shifts, ergonomic mass balance is off.
-
-**Mitigation:** Add a small counterweight or strap routing to the opposite side of the body; or design drone block with a hollow tenon (lower mass) for the longer flutes. Document in the assembly manual.
-
-**Severity:** Low
-
----
-
-## Supply
-
-### Walnut color match across the four-flute set
-
-**Symptom:** Four flutes look like four different woods — light blonde walnut next to dark chocolate. The set looks unfinished or hastily-built.
-
-**Mechanism:** Walnut color varies dramatically by source, board, and time-since-cut. Heartwood vs sapwood contrast; faded vs unfaded boards.
-
-**Test:** Lay out all four blanks side-by-side in shop daylight before stock prep. If color delta is jarring, source is too varied.
-
-**Mitigation:** Order all four blanks from the same supplier on the same day, ideally from adjacent boards. Specify "matched set" when ordering. Tony's typical supplier pairs walnut for matched purpose at no premium when asked.
-
-**Severity:** Low (cosmetic; only affects gallery aesthetic, not function)
-
-### Hard maple inlay stock thickness drift
-
-**Symptom:** 1/16" plugs are 0.062" — but supplied stock varies 0.058–0.068" across a single board. Plug fits one pocket loosely and the next too tightly.
-
-**Mechanism:** Drum sander inconsistency at the supplier. Big-box hardware-store maple varies more than specialty luthier stock.
-
-**Test:** Measure supplied stock at 5 locations across the board with calipers before machining. If range > 0.005", the stock isn't suitable for plug work.
-
-**Mitigation:** Drum-sand the stock yourself in Phase 1 (before Phase 8 inlay) to a measured 0.0625" ±0.001". Or order from a specialty supplier (e.g., Gilmer Wood) where dimensional tolerance is tighter.
-
-**Severity:** Medium (loose plugs need re-glue; tight plugs need re-machining)
-
----
-
-## Fit/Finish
-
-### Tru-Oil pooling in inlay grooves
-
-**Symptom:** Finish accumulates in the chevron grooves of the inlay pattern, leaving a glossy raised "pool" around each engraved line. Visually muddy; loses the geometric crispness.
-
-**Mechanism:** Tru-Oil is a thin oil-varnish blend. Capillary action pulls it into engraved grooves; as solvents evaporate, oil + resin remain at the bottom, building up over coats.
-
-**Test:** After coat 2, examine inlay under raking light. Visible darker bands inside the grooves = pooling.
-
-**Mitigation:** Wipe excess Tru-Oil from inlay grooves with a foam swab between coats. Or apply finish first, sand back the inlay area, *then* glue inlay flush — but this changes the build order.
-
-**Severity:** Low (cosmetic; affects gallery photography but not play)
-
-### CA glue squeeze-out around inlay margins
-
-**Symptom:** White haze of cured CA glue at the perimeter of each inlay plug. Visible against walnut body.
-
-**Mechanism:** Thin CA glue wicks out of the joint when the plug is pressed in. Spread is fast (seconds) and the haze is hard to remove without affecting the surrounding finish.
-
-**Test:** After Phase 8 plug set, examine plug margin with a 5× loupe. Any white residue = squeeze-out.
-
-**Mitigation:** Apply masking tape around the pocket margin before pressing the plug; remove tape and any squeeze-out within 30 seconds. Sand finish-flush in Phase 8 final step rather than just plug-flush.
-
-**Severity:** Low
-
----
-
-## Recap
-
-| Severity | Count | Top concern |
-|---|---|---|
-| **High** | 2 | Bore mismatch at glue-up (use wood dowels, not pins) |
-| **Medium** | 5 | Hole 6 sharps from window proximity (add empirical correction global) |
-| **Low** | 5 | Tru-Oil pooling, CA squeeze-out, hand-reach on Dm |
-
-Run the High-severity tests before committing to all four bodies. A failed Phase 3 glue-up is a 4-week setback; verify on the first prototype.
+# Risks — Drone Flute Family (red-team output)
+
+Structured failure-mode walk per v4 red-team specialist. Every risk has a verification test attached.
+
+## Acoustic risks
+
+### A-1 — Hole 6 (octave) consistently sharp
+**Likelihood:** medium · **Severity:** medium
+**Mode:** Hole 6 sits closest to the window; small position errors are amplified by the formula.
+**Cause:** K2 correction at the high-frequency end may underpredict the foot-end correction's effect on the highest hole.
+**Test:** After Phase 6 tuning, measure octave hole frequency on each flute; if it's > +5 cents on more than 2 of 4 flutes, capture a per-flute correction in the Excel K2 table for the next family.
+
+### A-2 — Drone chamber leaks into melody bore
+**Likelihood:** low · **Severity:** high
+**Mode:** Glue-up of the split-body must perfectly seal between the two parallel chambers. A pinhole leak between melody and drone bores ruins both notes.
+**Cause:** Bandsaw resaw ridges + insufficient hand-planing + glue starvation in the long bore region.
+**Test:** Pre-glue, run a fingertip along the inside of each bore in both halves to confirm no ridges. Post-glue (after cure) blow into the melody side with the drone block out; should hear ONLY melody fundamental, no drone artifact.
+
+### A-3 — Splitting edge too thick = breathy tone
+**Likelihood:** medium · **Severity:** medium
+**Mode:** The 1/16" upcut is leaving 0.005" skin to be finished by chisel; if Tony skips the chisel step the edge stays too thick and the flute sounds breathy.
+**Cause:** Time pressure during build, or unclear documentation.
+**Test:** Listen-test after Phase 7 — clean tone within 3 puffs = pass. Otherwise sharpen with chisel.
+
+### A-4 — Cross-flute pitch drift from environmental conditions
+**Likelihood:** high · **Severity:** low
+**Mode:** Tony's shop temperature varies 60–75°F seasonally. Speed of sound changes ~5 cents per 10°F.
+**Cause:** Physics; not avoidable.
+**Test:** Tune all four flutes in a single session at a known shop temp. Record temperature in `validation.csv`. Differences across builds will be expected.
+
+## Structural risks
+
+### S-1 — Walnut split along glue line
+**Likelihood:** low · **Severity:** high
+**Mode:** Long glue line (up to 30") in walnut + humidity swing → split.
+**Cause:** Insufficient acclimation, marginal glue coat, or seasonal humidity change after delivery.
+**Test:** Before glue-up, both halves must be from the same blank with the same MC. Use Type II glue (water-resistant) and 6+ clamps. Post-build, store flute in 40–50% RH.
+
+### S-2 — Drone tenon snaps
+**Likelihood:** low · **Severity:** medium
+**Mode:** 0.75" tenon in walnut at small diameter (0.625" for Am) → bending stress if drone block dropped.
+**Cause:** End-grain runout in the drone block stock.
+**Test:** Inspect tenon grain orientation — must be parallel to long axis. Drop test: drone block falls 24" onto carpet without tenon failure.
+
+### S-3 — Octagonal facet too thin at peak
+**Likelihood:** low · **Severity:** medium
+**Mode:** After faceting, the wall thickness at the bore is `wall - facet_allowance/2`. At wall = 0.25" and allowance = 0.05", that's 0.225" — fine for walnut. But if Tony reduces wall to 0.20" thinking he's saving weight, walls drop to 0.175" and crack risk rises.
+**Cause:** Future wall-thickness reduction without recomputing.
+**Test:** After CNC faceting, verify wall thickness at bore with calipers. Must be ≥ 0.20" structural minimum.
+
+## Ergonomic risks
+
+### E-1 — Hole 1 (m3) reach for small hands
+**Likelihood:** medium · **Severity:** low
+**Mode:** Em and Dm flutes are 27–30 in long; the m3 hole is 3.3–3.7 in from foot. A 5th-percentile hand may struggle to reach hole 1 while keeping the bird block under the upper lip.
+**Cause:** Family scaling unconstrained by anthropometric data.
+**Test:** 5th-percentile fingerspan = ~7" hand length. Verify that hole 1 to hole 6 span is < 6" for Em and Dm. If not, consider adjusting scale offsets or adding a key-extension lever (out of scope for v1 of this family).
+
+### E-2 — Window position obscured by player's lip
+**Likelihood:** low · **Severity:** low
+**Mode:** Player's lower lip rests on top of bird block; if `bird_height` is too low, lip blocks window airflow.
+**Cause:** Standard NAF design; well-understood. Default 0.75" bird height clears.
+**Test:** Slow puff while resting normally; tone responds without lip-curling effort.
+
+## Supply risks
+
+### Su-1 — Hard maple 1/16" thin stock backorder
+**Likelihood:** medium · **Severity:** low
+**Mode:** Bell Forest occasionally runs out of 1/16" inventory.
+**Cause:** Niche thickness for thin-stock work.
+**Test:** Verify in-stock at order time. If unavailable, resaw 1/8" stock to 1/16" — adds 1 hour but not blocking. Acceptable substitute: holly, beech.
+
+### Su-2 — Walnut grade variability
+**Likelihood:** medium · **Severity:** medium
+**Mode:** Black walnut varies in figure, color (sapwood vs heartwood), and density. A bargain blank may have visible sapwood streaks that crash the aesthetic.
+**Cause:** Natural material variation; not all suppliers grade tightly.
+**Test:** Order from Hardwoods to Get with explicit "no visible sapwood" specification, or pick personally if local. Reject and re-source if delivery has > 10% sapwood by area.
+
+## Fit / finish risks
+
+### F-1 — Inlay plug flush-sand removes too much
+**Likelihood:** medium · **Severity:** low
+**Mode:** Sanding inlay flush also removes a thin layer of the surrounding walnut, lowering the body OD locally.
+**Cause:** Aggressive grit + flat block + over-confident builder.
+**Test:** Pre-inlay caliper measurement of body OD at each band location. Post-flush-sand re-measure. Loss should be < 0.005". If more, drop to 320 grit on a smaller block.
+
+### F-2 — Tru-Oil yellowing on maple inlay
+**Likelihood:** low · **Severity:** low
+**Mode:** Tru-Oil ambers slightly over time; on bright maple this is visible; some clients perceive it as discoloration.
+**Cause:** Tru-Oil is a tung/varnish blend; ambering is normal.
+**Test:** Document the look at delivery. Provide care notes that some warming over 1–2 years is normal and is shared by other oil finishes (Watco, Howard's). Alternative: shellac sealcoat under Tru-Oil reduces ambering on light woods.
+
+### F-3 — Drone block tenon over-clearance with humidity
+**Likelihood:** medium · **Severity:** low
+**Mode:** Tenon turned at 60% RH; in low-humidity winter (20% RH) walnut shrinks, tenon becomes loose, drone falls out mid-play.
+**Cause:** Wood movement; not avoidable but bounded.
+**Test:** Turn tenons in low-humidity season. Aim for 0.005" clearance at 30% RH; will tighten in summer, still slip-fit.
+
+## Verification gates (must pass before shipping)
+
+- [ ] All flutes tuned within ±5 cents on every hole, recorded in `validation.csv`.
+- [ ] Drone chamber tested as independent (no melody/drone leak — A-2 test).
+- [ ] Wall thickness verified ≥ 0.20" at bore on every facet (S-3 test).
+- [ ] Drop test on drone tenon (S-2 test).
+- [ ] Visual inlay flush within 0.005" (F-1 test).
+- [ ] Glue line inspected on each body, no visible gap (S-1 test).
+- [ ] Photographs and audio recordings archived to `data/` and `images/`.

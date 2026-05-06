@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="850px" height="550px" viewBox="0 0 850 550" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .border { fill:none; stroke:#000; stroke-width:1.2; }
+    .titlebox { fill:#fff; stroke:#000; stroke-width:1.2; }
+    .body { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:1; }
+    .hole { fill:#1a1a1a; stroke:#000; stroke-width:0.5; }
+    .bore { fill:none; stroke:#1a1a1a; stroke-width:0.7; stroke-dasharray:3,2; }
+    .center { fill:none; stroke:#9a3a1a; stroke-width:0.6; stroke-dasharray:4,2,1,2; }
+    .dim { fill:none; stroke:#1565c0; stroke-width:0.5; }
+    .dim-text { fill:#1565c0; font-size:8px; }
+    .dim-text-bold { fill:#1565c0; font-size:9px; font-weight:bold; }
+    .label { fill:#1a1a1a; font-size:9px; }
+    .title { fill:#1F3864; font-size:14px; font-weight:bold; }
+    .subtitle { fill:#1F3864; font-size:10px; font-weight:bold; }
+    .small { fill:#1a1a1a; font-size:7px; }
+    .datum-flag { fill:#fff; stroke:#9a3a1a; stroke-width:0.7; }
+    .datum-text { fill:#9a3a1a; font-size:8px; font-weight:bold; }
+    .section { fill:none; stroke:#9a3a1a; stroke-width:1.5; }
+    .section-text { fill:#9a3a1a; font-size:11px; font-weight:bold; }
+    .facet { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:0.7; }
+    .table-head { fill:#305496; }
+    .table-head-text { fill:#fff; font-size:8px; font-weight:bold; }
+    .table-cell { fill:#fff; stroke:#bfbfbf; stroke-width:0.4; }
+    .table-text { fill:#1a1a1a; font-size:7.5px; }
+  </style>
+  <rect class="border" x="25.0" y="25.0" width="800.0" height="500.0"/>
+  <text class="title" x="425.0" y="35" text-anchor="middle">DRONE FLUTE FAMILY — OVERVIEW</text>
+  <text class="subtitle" x="425.0" y="52" text-anchor="middle">All 4 flutes to common scale, foot-aligned. DRN-FAM-001.</text>
+  <rect class="body" x="3.0" y="107.8" width="77.0" height="24.4"/>
+  <text class="small" x="41.5" y="124" text-anchor="middle">drone</text>
+  <rect class="body" x="80" y="106.8" width="483.274" height="26.4" rx="2"/>
+  <line class="center" x1="-2.0" y1="120" x2="568.274" y2="120"/>
+  <circle class="hole" cx="133.526" cy="120" r="2.75"/>
+  <circle class="hole" cx="164.392" cy="120" r="3.091"/>
+  <circle class="hole" cx="191.892" cy="120" r="3.091"/>
+  <circle class="hole" cx="204.498" cy="120" r="3.091"/>
+  <circle class="hole" cx="227.62" cy="120" r="3.091"/>
+  <circle class="hole" cx="248.212" cy="120" r="3.091"/>
+  <rect class="hole" x="392.774" y="104.8" width="13.75" height="4"/>
+  <rect class="body" x="392.774" y="92.8" width="44.0" height="12"/>
+  <text class="subtitle" x="20" y="124" text-anchor="start">Am</text>
+  <text class="small" x="20" y="138" text-anchor="start">440.0 Hz</text>
+  <text class="dim-text-bold" x="573.274" y="124" text-anchor="start">L = 21.967"</text>
+  <rect class="body" x="3.0" y="196.425" width="77.0" height="27.15"/>
+  <text class="small" x="41.5" y="214" text-anchor="middle">drone</text>
+  <rect class="body" x="80" y="195.425" width="549.7139999999999" height="29.15" rx="2"/>
+  <line class="center" x1="-2.0" y1="210" x2="634.7139999999999" y2="210"/>
+  <circle class="hole" cx="144.35" cy="210" r="3.091"/>
+  <circle class="hole" cx="181.464" cy="210" r="3.432"/>
+  <circle class="hole" cx="214.53" cy="210" r="3.432"/>
+  <circle class="hole" cx="229.68800000000002" cy="210" r="3.432"/>
+  <circle class="hole" cx="257.496" cy="210" r="3.432"/>
+  <circle class="hole" cx="282.26800000000003" cy="210" r="3.432"/>
+  <rect class="hole" x="459.21399999999994" y="193.425" width="13.75" height="4"/>
+  <rect class="body" x="459.21399999999994" y="181.425" width="44.0" height="12"/>
+  <text class="subtitle" x="20" y="214" text-anchor="start">F#m</text>
+  <text class="small" x="20" y="228" text-anchor="start">370.0 Hz</text>
+  <text class="dim-text-bold" x="639.7139999999999" y="214" text-anchor="start">L = 24.987"</text>
+  <rect class="body" x="3.0" y="285.05" width="77.0" height="29.9"/>
+  <text class="small" x="41.5" y="304" text-anchor="middle">drone</text>
+  <rect class="body" x="80" y="284.05" width="598.95" height="31.9" rx="2"/>
+  <line class="center" x1="-2.0" y1="300" x2="683.95" y2="300"/>
+  <circle class="hole" cx="152.46800000000002" cy="300" r="3.432"/>
+  <circle class="hole" cx="194.24599999999998" cy="300" r="3.784"/>
+  <circle class="hole" cx="231.47" cy="300" r="3.784"/>
+  <circle class="hole" cx="248.52" cy="300" r="3.784"/>
+  <circle class="hole" cx="279.826" cy="300" r="3.784"/>
+  <circle class="hole" cx="307.7" cy="300" r="3.784"/>
+  <rect class="hole" x="508.45000000000005" y="282.05" width="13.75" height="4"/>
+  <rect class="body" x="508.45000000000005" y="270.05" width="44.0" height="12"/>
+  <text class="subtitle" x="20" y="304" text-anchor="start">Em</text>
+  <text class="small" x="20" y="318" text-anchor="start">329.6 Hz</text>
+  <text class="dim-text-bold" x="688.95" y="304" text-anchor="start">L = 27.225"</text>
+  <rect class="body" x="3.0" y="373.675" width="77.0" height="32.65"/>
+  <text class="small" x="41.5" y="394" text-anchor="middle">drone</text>
+  <rect class="body" x="80" y="372.675" width="656.128" height="34.65" rx="2"/>
+  <line class="center" x1="-2.0" y1="390" x2="741.128" y2="390"/>
+  <circle class="hole" cx="161.81799999999998" cy="390" r="3.784"/>
+  <circle class="hole" cx="208.98600000000002" cy="390" r="4.125"/>
+  <circle class="hole" cx="251.028" cy="390" r="4.125"/>
+  <circle class="hole" cx="270.278" cy="390" r="4.125"/>
+  <circle class="hole" cx="305.632" cy="390" r="4.125"/>
+  <circle class="hole" cx="337.114" cy="390" r="4.125"/>
+  <rect class="hole" x="565.628" y="370.675" width="13.75" height="4"/>
+  <rect class="body" x="565.628" y="358.675" width="44.0" height="12"/>
+  <text class="subtitle" x="20" y="394" text-anchor="start">Dm</text>
+  <text class="small" x="20" y="408" text-anchor="start">293.7 Hz</text>
+  <text class="dim-text-bold" x="746.128" y="394" text-anchor="start">L = 29.824"</text>
+  <text class="small" x="60" y="470" text-anchor="start">Hole legend (left to right): m3, P4, P5, m6, m7, octave</text>
+  <text class="small" x="60" y="484" text-anchor="start">Drone block at foot end (swappable U/5/8 set per flute)</text>
+  <rect class="titlebox" x="610" y="440" width="220" height="100"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="460.0" x2="830" y2="460.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="480.0" x2="830" y2="480.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="500.0" x2="830" y2="500.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="520.0" x2="830" y2="520.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="709.0" y1="440" x2="709.0" y2="540"/>
+  <text class="subtitle" x="615" y="453" text-anchor="start">TONY KOOP — MAKER NEXUS</text>
+  <text class="subtitle" x="714.0" y="453" text-anchor="start">DRN-FAM-001</text>
+  <text class="small" x="615" y="473.0" text-anchor="start">Drone Flute Family DRN-FAM-001</text>
+  <text class="small" x="714.0" y="473.0" text-anchor="start">Key: FAMILY</text>
+  <text class="small" x="615" y="493.0" text-anchor="start">f0 = 0.00 Hz · L = 0.000 in</text>
+  <text class="small" x="714.0" y="493.0" text-anchor="start">Units: inches</text>
+  <text class="small" x="615" y="513.0" text-anchor="start">Source: Drone-Flutes-Design.xlsx</text>
+  <text class="small" x="714.0" y="513.0" text-anchor="start">Scale: NTS</text>
+  <text class="small" x="615" y="533.0" text-anchor="start">Date: 2026-05-05  Rev: R0</text>
+  <text class="small" x="714.0" y="533.0" text-anchor="start">Sheet 1 of 1</text>
+</svg>

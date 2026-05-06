@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Drone Flute Family — Printable Shop Packet</title>
+<style>
+@page { size: letter; margin: 0.75in; }
+body { font-family: Charter, Georgia, serif; font-size: 11pt; color: #000; line-height: 1.45; max-width: 7in; margin: 0 auto; }
+h1 { font-size: 18pt; color: #1F3864; border-bottom: 2px solid #1F3864; padding-bottom: 4px; page-break-before: always; }
+h1:first-child { page-break-before: avoid; }
+h2 { font-size: 14pt; color: #1F3864; margin-top: 1em; }
+h3 { font-size: 12pt; color: #305496; }
+table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 10pt; }
+th { background: #DDEBF7; color: #1F3864; text-align: left; padding: 4px 6px; border: 1px solid #BFBFBF; }
+td { padding: 4px 6px; border: 1px solid #BFBFBF; vertical-align: top; }
+tr:nth-child(even) td { background: #F8F9FA; }
+code { font-family: Consolas, monospace; background: #F2F2F2; padding: 1px 4px; border-radius: 2px; font-size: 10pt; }
+pre { background: #F2F2F2; padding: 8px; border-left: 3px solid #1F3864; font-family: Consolas, monospace; font-size: 9pt; overflow-x: auto; }
+ul, ol { margin: 0.4em 0 0.4em 1.4em; }
+.muted { color: #595959; font-style: italic; font-size: 10pt; }
+.checkbox { font-family: monospace; }
+hr { border: none; border-top: 1px solid #BFBFBF; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>1 · Cover</h1>
+<p><strong>Project:</strong> Drone Flute Family (DRN-FAM-001)<br>
+<strong>Date:</strong> 2026-05-05 &nbsp; <strong>Builder:</strong> Tony Koop &nbsp; <strong>Shop:</strong> Maker Nexus</p>
+<p>Four NAF-style drone flutes (Am, F#m, Em, Dm), walnut + maple, tunable drone block set per flute (U/5/8).</p>
+<p class="muted">Materials $193 · Tooling $245 (one-time) · Total first build $438+</p>
+
+<h1>2 · Quick Start</h1>
+<ol>
+<li>Confirm walnut + maple acclimated 7 days.</li>
+<li>Open <code>Drone-Flutes-Design.xlsx</code>, verify Master_Inputs.</li>
+<li>Print <code>cut-list.csv</code>, tape to bandsaw.</li>
+<li>Phase 1 → Phase 12 per <code>assembly-manual.md</code>.</li>
+</ol>
+
+<h1>3 · Design Intent</h1>
+<ul>
+<li>Open-open pipe + NAF K2 empirical correction</li>
+<li>A=440 Hz concert pitch</li>
+<li>68°F reference temperature</li>
+<li>Octagonal body, 8 facets, walnut with hard-maple CNC inlay</li>
+<li>Drone offset = global var; flips all 4 flutes in one edit</li>
+</ul>
+
+<h1>4 · BOM Summary</h1>
+<table>
+<tr><th>Group</th><th>Subtotal</th></tr>
+<tr><td>Wood</td><td>$193</td></tr>
+<tr><td>Hardware + finish</td><td>$78</td></tr>
+<tr><td>CNC tooling + drills</td><td>$245 (one-time)</td></tr>
+<tr><td><strong>Total first build</strong></td><td><strong>$516</strong></td></tr>
+</table>
+<p class="muted">Full BOM in bom.csv.</p>
+
+<h1>5 · Sourcing</h1>
+<p>See <code>sourcing.csv</code> for live URLs and lead times. RFQs ready in <code>supplier-rfq.md</code>.</p>
+
+<h1>6 · Cut List Highlights</h1>
+<ul>
+<li>4 walnut body blanks (Am+F#m: 1.5×1.5×26; Em+Dm: 1.75×1.75×32)</li>
+<li>1 walnut stick → 12 drone blocks (3/flute × 4)</li>
+<li>1 offcut → 4 bird blocks</li>
+<li>2 sheets 1/16" maple + 1 sheet 1/8" maple → all inlay</li>
+</ul>
+
+<h1>7 · Drawings + Tolerances</h1>
+<table>
+<tr><th>Feature</th><th>Tolerance</th></tr>
+<tr><td>Hole positions</td><td>±0.020" (tuning-critical)</td></tr>
+<tr><td>Drone tenon</td><td>±0.003" (fit-critical)</td></tr>
+<tr><td>Wall at bore</td><td>≥ 0.20" (structural)</td></tr>
+<tr><td>Splitting edge</td><td>knife-sharp (listen-test)</td></tr>
+<tr><td>Inlay flush</td><td>&lt; 0.005" proud/recessed</td></tr>
+</table>
+
+<h1>8 · Validation Targets</h1>
+<table>
+<tr><th>Member</th><th>f0</th><th>m3</th><th>P4</th><th>P5</th><th>m6</th><th>m7</th><th>oct</th></tr>
+<tr><td>Am</td><td>440.0</td><td>523.3</td><td>587.3</td><td>659.3</td><td>698.5</td><td>784.0</td><td>880.0</td></tr>
+<tr><td>F#m</td><td>370.0</td><td>440.0</td><td>493.9</td><td>554.4</td><td>587.3</td><td>659.3</td><td>740.0</td></tr>
+<tr><td>Em</td><td>329.6</td><td>392.0</td><td>440.0</td><td>493.9</td><td>523.3</td><td>587.3</td><td>659.3</td></tr>
+<tr><td>Dm</td><td>293.7</td><td>349.2</td><td>392.0</td><td>440.0</td><td>466.2</td><td>523.3</td><td>587.3</td></tr>
+</table>
+<p class="muted">All values Hz. Tolerance ±5 cents. Record measured + cents-error in <code>validation.csv</code>.</p>
+
+<h1>9 · Shop Notes (write here)</h1>
+<table>
+<tr><th>Phase</th><th>Started</th><th>Done</th><th>Notes</th></tr>
+<tr><td>1 — Stock prep</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>2 — Split-body CNC</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>3 — Glue-up</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>4 — Lathe</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>5 — Faceting</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>6 — Tone holes</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>7 — Window/edge</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>8 — Inlay</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>9 — Drone blocks</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>10 — Bird blocks</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>11 — Finish</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+<tr><td>12 — Tune + QA</td><td class="checkbox">[ ]</td><td class="checkbox">[ ]</td><td>&nbsp;</td></tr>
+</table>
+
+<h1>10 · Risks Summary (top 3)</h1>
+<ul>
+<li><strong>A-1</strong> · Hole 6 (octave) running sharp — listen during tune-step.</li>
+<li><strong>A-2</strong> · Drone-melody chamber leak — verify pre-glue + post-glue.</li>
+<li><strong>E-1</strong> · Em/Dm reach for 5th-percentile hands — measure before delivery.</li>
+</ul>
+<p class="muted">Full red-team list in <code>risks.md</code>.</p>
+
+<h1>Appendix · File Index</h1>
+<ul>
+<li><code>Drone-Flutes-Design.xlsx</code> — Excel design source</li>
+<li><code>design.md</code> — physics narrative</li>
+<li><code>family-spec.csv</code> — auto-generator input</li>
+<li><code>bom.csv · sourcing.csv · cut-list.csv · validation.csv</code></li>
+<li><code>assembly-manual.md · supplier-rfq.md · visual-bom-brief.md · drawing-brief.md</code></li>
+<li><code>risks.md</code> — failure-mode walk</li>
+<li><code>wolfram-starter.wl</code> — Wolfram package</li>
+<li><code>capstone-deck.pptx · capstone-deck.md</code></li>
+<li><code>print-packet.md · print-packet.html · print-packet.pdf</code></li>
+<li><code>capstone-manifest.json</code></li>
+<li><code>drawings/</code> — per-key SVGs</li>
+<li><code>inlay-patterns/</code> — 16 DXF + 16 SVG</li>
+<li><code>sw-reference/</code> — SolidWorks ref doc</li>
+<li><code>site/</code> — recruiter web page</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="850px" height="550px" viewBox="0 0 850 550" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .border { fill:none; stroke:#000; stroke-width:1.2; }
+    .titlebox { fill:#fff; stroke:#000; stroke-width:1.2; }
+    .body { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:1; }
+    .hole { fill:#1a1a1a; stroke:#000; stroke-width:0.5; }
+    .bore { fill:none; stroke:#1a1a1a; stroke-width:0.7; stroke-dasharray:3,2; }
+    .center { fill:none; stroke:#9a3a1a; stroke-width:0.6; stroke-dasharray:4,2,1,2; }
+    .dim { fill:none; stroke:#1565c0; stroke-width:0.5; }
+    .dim-text { fill:#1565c0; font-size:8px; }
+    .dim-text-bold { fill:#1565c0; font-size:9px; font-weight:bold; }
+    .label { fill:#1a1a1a; font-size:9px; }
+    .title { fill:#1F3864; font-size:14px; font-weight:bold; }
+    .subtitle { fill:#1F3864; font-size:10px; font-weight:bold; }
+    .small { fill:#1a1a1a; font-size:7px; }
+    .datum-flag { fill:#fff; stroke:#9a3a1a; stroke-width:0.7; }
+    .datum-text { fill:#9a3a1a; font-size:8px; font-weight:bold; }
+    .section { fill:none; stroke:#9a3a1a; stroke-width:1.5; }
+    .section-text { fill:#9a3a1a; font-size:11px; font-weight:bold; }
+    .facet { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:0.7; }
+    .table-head { fill:#305496; }
+    .table-head-text { fill:#fff; font-size:8px; font-weight:bold; }
+    .table-cell { fill:#fff; stroke:#bfbfbf; stroke-width:0.4; }
+    .table-text { fill:#1a1a1a; font-size:7.5px; }
+  </style>
+  <rect class="border" x="25.0" y="25.0" width="800.0" height="500.0"/>
+  <text class="title" x="425.0" y="35" text-anchor="middle">DRONE FLUTE — EXPLODED ASSEMBLY (F#m canonical)</text>
+  <text class="subtitle" x="425.0" y="52" text-anchor="middle">Component breakdown for the F#m flute. All members assemble identically.</text>
+  <rect class="body" x="80" y="308.075" width="63.0" height="23.849999999999998" rx="2"/>
+  <rect class="hole" x="129.5" y="316" width="13.5" height="8"/>
+  <text class="small" x="111.5" y="302.075" text-anchor="middle">Drone OCT (-12 st)</text>
+  <text class="small" x="111.5" y="345.925" text-anchor="middle">qty 1 per flute · 12 total</text>
+  <rect class="body" x="173.0" y="308.075" width="63.0" height="23.849999999999998" rx="2"/>
+  <rect class="hole" x="222.5" y="316" width="13.5" height="8"/>
+  <text class="small" x="204.5" y="302.075" text-anchor="middle">Drone 5TH (-7 st)</text>
+  <text class="small" x="204.5" y="345.925" text-anchor="middle">qty 1 per flute · 12 total</text>
+  <rect class="body" x="266.0" y="308.075" width="63.0" height="23.849999999999998" rx="2"/>
+  <rect class="hole" x="315.5" y="316" width="13.5" height="8"/>
+  <text class="small" x="297.5" y="302.075" text-anchor="middle">Drone UNISON (0 st)</text>
+  <text class="small" x="297.5" y="345.925" text-anchor="middle">qty 1 per flute · 12 total</text>
+  <line class="dim" x1="339.0" y1="320" x2="364.0" y2="320"/>
+  <polygon class="dim" points="364.0,320 359.0,317 359.0,323"/>
+  <rect class="body" x="359.0" y="308.075" width="350" height="23.849999999999998" rx="2"/>
+  <line class="center" x1="354.0" y1="320" x2="714.0" y2="320"/>
+  <circle class="hole" cx="411.65" cy="320" r="2.5290000000000004"/>
+  <circle class="hole" cx="442.016" cy="320" r="2.808"/>
+  <circle class="hole" cx="469.07" cy="320" r="2.808"/>
+  <circle class="hole" cx="481.472" cy="320" r="2.808"/>
+  <circle class="hole" cx="504.224" cy="320" r="2.808"/>
+  <circle class="hole" cx="524.492" cy="320" r="2.808"/>
+  <rect class="hole" x="669.266" y="306.075" width="11.25" height="4"/>
+  <text class="small" x="534.0" y="300.075" text-anchor="middle">Body — Walnut, octagonal facet</text>
+  <text class="small" x="534.0" y="345.925" text-anchor="middle">qty 1 per flute</text>
+  <rect class="body" x="739.0" y="300.5" width="36.0" height="13.5" rx="2"/>
+  <text class="small" x="757.0" y="294.5" text-anchor="middle">Bird block</text>
+  <text class="small" x="757.0" y="328" text-anchor="middle">Walnut, laser-engraved</text>
+  <line class="dim" x1="805.0" y1="310" x2="835.0" y2="330"/>
+  <line class="dim" x1="810.0" y1="310" x2="840.0" y2="330"/>
+  <text class="small" x="825.0" y="344" text-anchor="middle">Leather lacing 3/16"</text>
+  <text class="subtitle" x="60" y="370" text-anchor="start">Assembly notes</text>
+  <text class="small" x="60" y="384" text-anchor="start">1. Insert chosen drone block tenon-first into foot socket. Slip-fit, do not glue.</text>
+  <text class="small" x="60" y="396" text-anchor="start">2. Place bird block over window opening with bottom shoulder on top facet.</text>
+  <text class="small" x="60" y="408" text-anchor="start">3. Tie bird in place with leather lacing through cord channels.</text>
+  <text class="small" x="60" y="420" text-anchor="start">4. Verify flue gap 0.030–0.050". Seat bird if tone is breathy; shim if too thin.</text>
+  <rect class="titlebox" x="610" y="440" width="220" height="100"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="460.0" x2="830" y2="460.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="480.0" x2="830" y2="480.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="500.0" x2="830" y2="500.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="520.0" x2="830" y2="520.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="709.0" y1="440" x2="709.0" y2="540"/>
+  <text class="subtitle" x="615" y="453" text-anchor="start">TONY KOOP — MAKER NEXUS</text>
+  <text class="subtitle" x="714.0" y="453" text-anchor="start">DRN-ASSY-001</text>
+  <text class="small" x="615" y="473.0" text-anchor="start">Drone Flute Family DRN-FAM-001</text>
+  <text class="small" x="714.0" y="473.0" text-anchor="start">Key: ASSEMBLY</text>
+  <text class="small" x="615" y="493.0" text-anchor="start">f0 = 369.99 Hz · L = 24.987 in</text>
+  <text class="small" x="714.0" y="493.0" text-anchor="start">Units: inches</text>
+  <text class="small" x="615" y="513.0" text-anchor="start">Source: Drone-Flutes-Design.xlsx</text>
+  <text class="small" x="714.0" y="513.0" text-anchor="start">Scale: NTS</text>
+  <text class="small" x="615" y="533.0" text-anchor="start">Date: 2026-05-05  Rev: R0</text>
+  <text class="small" x="714.0" y="533.0" text-anchor="start">Sheet 1 of 1</text>
+</svg>

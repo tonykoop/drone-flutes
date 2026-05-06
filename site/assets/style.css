@@ -1,0 +1,302 @@
+:root {
+  --primary: #6D4226;
+  --primary-light: #8a5a3a;
+  --secondary: #E7DDC9;
+  --accent: #B85042;
+  --text-dark: #1a1a1a;
+  --text-muted: #595959;
+  --bg: #FAF7F2;
+  --bg-dark: #2B1A0E;
+  --maple: #F4E4B7;
+  --rule: #cdb89c;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Charter, "Iowan Old Style", "Source Serif Pro", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--bg);
+}
+
+.hero {
+  background: linear-gradient(180deg, var(--bg-dark), var(--primary));
+  color: var(--bg);
+  padding: 4rem 1rem 5rem;
+  text-align: center;
+}
+.hero .accent { color: var(--maple); font-style: italic; }
+.hero h1 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0.5rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.hero .lead {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  max-width: 38rem;
+  margin: 1rem auto;
+  color: var(--maple);
+}
+.hero .keys {
+  font-family: "Source Code Pro", Consolas, monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--maple);
+  margin-top: 2rem;
+}
+.hero .meta {
+  margin-top: 2.5rem;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+section { margin: 3rem 0; }
+section h2 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 2rem;
+  color: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+section h3 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-top: 2rem;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+.callout {
+  background: var(--secondary);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+.callout .label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.family-card {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.family-card .key {
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0;
+}
+.family-card .freq {
+  font-family: "Source Code Pro", monospace;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.family-card .dim {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+.family-card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.family-card a:hover { color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+}
+thead {
+  background: var(--primary);
+  color: var(--bg);
+}
+th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+tbody tr:nth-child(even) { background: rgba(231, 221, 201, 0.4); }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.drawing-frame {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+.drawing-frame img,
+.drawing-frame svg,
+.drawing-frame object {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.build-steps { counter-reset: step; }
+.build-steps .step {
+  counter-increment: step;
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 1.5rem;
+}
+.build-steps .step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.build-steps .step h4 {
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+.build-steps .step p {
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+.risk-card {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  padding: 0.85rem 1rem;
+  border-radius: 0 4px 4px 0;
+}
+.risk-card.high { border-left-color: #c0392b; }
+.risk-card.med  { border-left-color: var(--accent); }
+.risk-card.low  { border-left-color: #5a8d4a; }
+.risk-card .id {
+  font-family: "Source Code Pro", monospace;
+  background: var(--primary);
+  color: var(--bg);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+.risk-card .title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.risk-card .test {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.resource {
+  background: var(--bg-dark);
+  color: var(--bg);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.resource:hover { background: var(--primary); }
+.resource .label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--maple);
+  margin-bottom: 0.3rem;
+}
+.resource .value {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.95rem;
+}
+
+footer {
+  background: var(--bg-dark);
+  color: var(--secondary);
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+}
+footer a { color: var(--maple); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* responsive tweaks */
+@media (max-width: 600px) {
+  .hero { padding: 3rem 1rem 4rem; }
+  body { font-size: 15px; }
+  table { font-size: 0.85rem; }
+  th, td { padding: 0.4rem 0.5rem; }
+}

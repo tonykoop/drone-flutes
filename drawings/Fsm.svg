@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="850px" height="550px" viewBox="0 0 850 550" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .border { fill:none; stroke:#000; stroke-width:1.2; }
+    .titlebox { fill:#fff; stroke:#000; stroke-width:1.2; }
+    .body { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:1; }
+    .hole { fill:#1a1a1a; stroke:#000; stroke-width:0.5; }
+    .bore { fill:none; stroke:#1a1a1a; stroke-width:0.7; stroke-dasharray:3,2; }
+    .center { fill:none; stroke:#9a3a1a; stroke-width:0.6; stroke-dasharray:4,2,1,2; }
+    .dim { fill:none; stroke:#1565c0; stroke-width:0.5; }
+    .dim-text { fill:#1565c0; font-size:8px; }
+    .dim-text-bold { fill:#1565c0; font-size:9px; font-weight:bold; }
+    .label { fill:#1a1a1a; font-size:9px; }
+    .title { fill:#1F3864; font-size:14px; font-weight:bold; }
+    .subtitle { fill:#1F3864; font-size:10px; font-weight:bold; }
+    .small { fill:#1a1a1a; font-size:7px; }
+    .datum-flag { fill:#fff; stroke:#9a3a1a; stroke-width:0.7; }
+    .datum-text { fill:#9a3a1a; font-size:8px; font-weight:bold; }
+    .section { fill:none; stroke:#9a3a1a; stroke-width:1.5; }
+    .section-text { fill:#9a3a1a; font-size:11px; font-weight:bold; }
+    .facet { fill:#fdfbf7; stroke:#1a1a1a; stroke-width:0.7; }
+    .table-head { fill:#305496; }
+    .table-head-text { fill:#fff; font-size:8px; font-weight:bold; }
+    .table-cell { fill:#fff; stroke:#bfbfbf; stroke-width:0.4; }
+    .table-text { fill:#1a1a1a; font-size:7.5px; }
+  </style>
+  <rect class="border" x="25.0" y="25.0" width="800.0" height="500.0"/>
+  <text class="title" x="425.0" y="35" text-anchor="middle">NATIVE AMERICAN DRONE FLUTE — KEY OF F#m</text>
+  <text class="subtitle" x="425.0" y="50" text-anchor="middle">Member ID: DRN-Fsmm   ·   f0 = 369.99 Hz   ·   L_total = 24.987 in   ·   Body OD (flat) = 1.325 in</text>
+  <rect class="body" x="80.0" y="114.00144892538034" width="603.4049746438058" height="31.997102149239314" rx="2"/>
+  <line class="center" x1="60.0" y1="130" x2="703.4049746438058" y2="130"/>
+  <text class="small" x="58.0" y="126" text-anchor="end">CL</text>
+  <rect class="datum-flag" x="73.0" y="95.00144892538034" width="14" height="14"/>
+  <text class="datum-text" x="80.0" y="105.00144892538034" text-anchor="middle">A</text>
+  <text class="small" x="80.0" y="167.99855107461966" text-anchor="middle">FOOT (open end)</text>
+  <line class="bore" x1="80.0" y1="130" x2="511.34508572808494" y2="130"/>
+  <rect class="hole" x="496.2521130161796" y="112.00144892538034" width="15.092972711905336" height="4"/>
+  <rect class="datum-flag" x="496.7985993721323" y="89.00144892538034" width="14" height="14"/>
+  <text class="datum-text" x="503.7985993721323" y="99.00144892538034" text-anchor="middle">B</text>
+  <text class="small" x="503.7985993721323" y="167.99855107461966" text-anchor="middle">WINDOW</text>
+  <rect class="body" x="496.2521130161796" y="96.00144892538034" width="48.29751267809708" height="14"/>
+  <text class="small" x="520.4008693552281" y="107.00144892538034" text-anchor="middle">BIRD</text>
+  <circle class="hole" cx="150.63511229171698" cy="130" r="3.39290026563632"/>
+  <text class="small" x="150.63511229171698" y="110.00144892538034" text-anchor="middle">H1 m3</text>
+  <circle class="hole" cx="191.37406423569186" cy="130" r="3.767205988891572"/>
+  <text class="small" x="191.37406423569186" y="110.00144892538034" text-anchor="middle">H2 P4</text>
+  <circle class="hole" cx="227.6696450132818" cy="130" r="3.767205988891572"/>
+  <text class="small" x="227.6696450132818" y="110.00144892538034" text-anchor="middle">H3 P5</text>
+  <circle class="hole" cx="244.30813813088628" cy="130" r="3.767205988891572"/>
+  <text class="small" x="244.30813813088628" y="110.00144892538034" text-anchor="middle">H4 m6</text>
+  <circle class="hole" cx="274.8321661434436" cy="130" r="3.767205988891572"/>
+  <text class="small" x="274.8321661434436" y="110.00144892538034" text-anchor="middle">H5 m7</text>
+  <circle class="hole" cx="302.0236657812123" cy="130" r="3.767205988891572"/>
+  <text class="small" x="302.0236657812123" y="110.00144892538034" text-anchor="middle">H6 oct</text>
+  <rect class="body" x="-4.5206471866698905" y="115.00144892538034" width="84.52064718666989" height="29.997102149239314"/>
+  <text class="small" x="37.739676406665055" y="130" text-anchor="middle">DRONE BLOCK</text>
+  <text class="small" x="37.739676406665055" y="140" text-anchor="middle">(swappable U/5/8)</text>
+  <rect class="hole" x="61.888432745713594" y="127" width="18.111567254286406" height="6"/>
+  <rect class="datum-flag" x="-19.52064718666989" y="123" width="14" height="14"/>
+  <text class="datum-text" x="-12.52064718666989" y="133" text-anchor="middle">C</text>
+  <line class="dim" x1="80.0" y1="175.99855107461966" x2="80.0" y2="187.99855107461966"/>
+  <line class="dim" x1="683.4049746438058" y1="175.99855107461966" x2="683.4049746438058" y2="187.99855107461966"/>
+  <line class="dim" x1="80.0" y1="185.99855107461966" x2="683.4049746438058" y2="185.99855107461966"/>
+  <polygon class="dim" fill="#1565c0" points="80.0,185.99855107461966 83.0,183.99855107461966 83.0,187.99855107461966"/>
+  <polygon class="dim" fill="#1565c0" points="683.4049746438058,185.99855107461966 680.4049746438058,183.99855107461966 680.4049746438058,187.99855107461966"/>
+  <text class="dim-text-bold" x="381.7024873219029" y="183.99855107461966" text-anchor="middle">24.987"</text>
+  <text class="dim-text" x="381.7024873219029" y="195.99855107461966" text-anchor="middle">L_total</text>
+  <line class="dim" x1="80.0" y1="199.99855107461966" x2="80.0" y2="211.99855107461966"/>
+  <line class="dim" x1="511.34508572808494" y1="199.99855107461966" x2="511.34508572808494" y2="211.99855107461966"/>
+  <line class="dim" x1="80.0" y1="209.99855107461966" x2="511.34508572808494" y2="209.99855107461966"/>
+  <polygon class="dim" fill="#1565c0" points="80.0,209.99855107461966 83.0,207.99855107461966 83.0,211.99855107461966"/>
+  <polygon class="dim" fill="#1565c0" points="511.34508572808494,209.99855107461966 508.34508572808494,207.99855107461966 508.34508572808494,211.99855107461966"/>
+  <text class="dim-text-bold" x="295.6725428640425" y="207.99855107461966" text-anchor="middle">17.862"</text>
+  <text class="dim-text" x="295.6725428640425" y="219.99855107461966" text-anchor="middle">L_bore_phys</text>
+  <line class="dim" x1="150.63511229171698" y1="112.00144892538034" x2="150.63511229171698" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="150.63511229171698" y="84.00144892538034" text-anchor="middle">2.925</text>
+  <line class="dim" x1="191.37406423569186" y1="112.00144892538034" x2="191.37406423569186" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="191.37406423569186" y="84.00144892538034" text-anchor="middle">4.612</text>
+  <line class="dim" x1="227.6696450132818" y1="112.00144892538034" x2="227.6696450132818" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="227.6696450132818" y="84.00144892538034" text-anchor="middle">6.115</text>
+  <line class="dim" x1="244.30813813088628" y1="112.00144892538034" x2="244.30813813088628" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="244.30813813088628" y="84.00144892538034" text-anchor="middle">6.804</text>
+  <line class="dim" x1="274.8321661434436" y1="112.00144892538034" x2="274.8321661434436" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="274.8321661434436" y="84.00144892538034" text-anchor="middle">8.068</text>
+  <line class="dim" x1="302.0236657812123" y1="112.00144892538034" x2="302.0236657812123" y2="86.00144892538034"/>
+  <text class="dim-text-bold" x="302.0236657812123" y="84.00144892538034" text-anchor="middle">9.194</text>
+  <line class="section" x1="381.7024873219029" y1="89.00144892538034" x2="381.7024873219029" y2="150.99855107461966"/>
+  <text class="section-text" x="376.7024873219029" y="86.00144892538034" text-anchor="end">A</text>
+  <text class="section-text" x="386.7024873219029" y="86.00144892538034" text-anchor="start">A</text>
+  <polygon class="facet" points="185.4327719506772,372.9610059419054 152.9610059419054,405.4327719506772 107.03899405809462,405.4327719506772 74.5672280493228,372.9610059419054 74.56722804932278,327.0389940580946 107.03899405809457,294.5672280493228 152.9610059419054,294.5672280493228 185.4327719506772,327.0389940580946"/>
+  <circle class="bore" cx="130" cy="350" r="37.64150943396227"/>
+  <line class="center" x1="60" y1="350" x2="200" y2="350"/>
+  <line class="center" x1="130" y1="280" x2="130" y2="420"/>
+  <text class="subtitle" x="130" y="272" text-anchor="middle">SECTION B-B</text>
+  <text class="label" x="130" y="440" text-anchor="middle">OD_flat = 1.325"</text>
+  <text class="label" x="130" y="452" text-anchor="middle">bore_ID = 0.875"  wall = 0.250"</text>
+  <text class="label" x="130" y="464" text-anchor="middle">facet_side = 0.549"</text>
+  <line class="dim" x1="167.64150943396226" y1="350" x2="195" y2="325"/>
+  <text class="dim-text" x="198" y="323" text-anchor="start">bore</text>
+  <line class="dim" x1="185.4327719506772" y1="327.0389940580946" x2="195" y2="285"/>
+  <text class="dim-text" x="198" y="283" text-anchor="start">8 facets</text>
+  <text class="subtitle" x="470.0" y="310" text-anchor="middle">SECTION A-A — Axial bore</text>
+  <rect class="body" x="280" y="320" width="380" height="80" rx="3"/>
+  <rect class="body" x="290" y="349.0625" width="269.5" height="21.875"/>
+  <rect class="body" x="567.5" y="349.0625" width="82.5" height="21.875"/>
+  <rect class="hole" x="559.5" y="346.0625" width="8" height="27.875"/>
+  <rect class="hole" x="567.5" y="324" width="25" height="4"/>
+  <text class="small" x="360" y="316" text-anchor="middle">main bore</text>
+  <text class="small" x="618.75" y="316" text-anchor="middle">SAC</text>
+  <text class="small" x="563.5" y="416" text-anchor="middle">splitting edge</text>
+  <text class="small" x="579.5" y="416" text-anchor="middle">window</text>
+  <text class="small" x="285" y="416" text-anchor="middle">FOOT</text>
+  <text class="subtitle" x="470.0" y="426" text-anchor="middle">Drone bore (parallel chamber, swappable block)</text>
+  <rect class="body" x="310" y="430" width="87.5" height="26.75" rx="2"/>
+  <rect class="body" x="310" y="434" width="75.5" height="18.75"/>
+  <rect class="hole" x="385.5" y="434" width="18.75" height="18.75"/>
+  <text class="small" x="391.5" y="470.75" text-anchor="middle">tenon Ø 0.870"</text>
+  <text class="small" x="343.75" y="445.375" text-anchor="middle">drone bore Ø 0.750"</text>
+  <rect class="table-head" x="620" y="250" width="195" height="14"/>
+  <text class="table-head-text" x="640.0" y="260" text-anchor="middle">Hole</text>
+  <text class="table-head-text" x="672.5" y="260" text-anchor="middle">Δst</text>
+  <text class="table-head-text" x="707.5" y="260" text-anchor="middle">Hz</text>
+  <text class="table-head-text" x="755.0" y="260" text-anchor="middle">pos foot</text>
+  <text class="table-head-text" x="797.5" y="260" text-anchor="middle">Ø in</text>
+  <rect class="table-cell" x="620" y="264" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="274" text-anchor="middle">H1 m3</text>
+  <rect class="table-cell" x="660" y="264" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="274" text-anchor="middle">3</text>
+  <rect class="table-cell" x="685" y="264" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="274" text-anchor="middle">440.0</text>
+  <rect class="table-cell" x="730" y="264" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="274" text-anchor="middle">2.925</text>
+  <rect class="table-cell" x="780" y="264" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="274" text-anchor="middle">0.281</text>
+  <rect class="table-cell" x="620" y="278" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="288" text-anchor="middle">H2 P4</text>
+  <rect class="table-cell" x="660" y="278" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="288" text-anchor="middle">5</text>
+  <rect class="table-cell" x="685" y="278" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="288" text-anchor="middle">493.9</text>
+  <rect class="table-cell" x="730" y="278" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="288" text-anchor="middle">4.612</text>
+  <rect class="table-cell" x="780" y="278" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="288" text-anchor="middle">0.312</text>
+  <rect class="table-cell" x="620" y="292" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="302" text-anchor="middle">H3 P5</text>
+  <rect class="table-cell" x="660" y="292" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="302" text-anchor="middle">7</text>
+  <rect class="table-cell" x="685" y="292" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="302" text-anchor="middle">554.4</text>
+  <rect class="table-cell" x="730" y="292" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="302" text-anchor="middle">6.115</text>
+  <rect class="table-cell" x="780" y="292" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="302" text-anchor="middle">0.312</text>
+  <rect class="table-cell" x="620" y="306" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="316" text-anchor="middle">H4 m6</text>
+  <rect class="table-cell" x="660" y="306" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="316" text-anchor="middle">8</text>
+  <rect class="table-cell" x="685" y="306" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="316" text-anchor="middle">587.3</text>
+  <rect class="table-cell" x="730" y="306" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="316" text-anchor="middle">6.804</text>
+  <rect class="table-cell" x="780" y="306" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="316" text-anchor="middle">0.312</text>
+  <rect class="table-cell" x="620" y="320" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="330" text-anchor="middle">H5 m7</text>
+  <rect class="table-cell" x="660" y="320" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="330" text-anchor="middle">10</text>
+  <rect class="table-cell" x="685" y="320" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="330" text-anchor="middle">659.3</text>
+  <rect class="table-cell" x="730" y="320" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="330" text-anchor="middle">8.068</text>
+  <rect class="table-cell" x="780" y="320" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="330" text-anchor="middle">0.312</text>
+  <rect class="table-cell" x="620" y="334" width="40" height="14"/>
+  <text class="table-text" x="640.0" y="344" text-anchor="middle">H6 oct</text>
+  <rect class="table-cell" x="660" y="334" width="25" height="14"/>
+  <text class="table-text" x="672.5" y="344" text-anchor="middle">12</text>
+  <rect class="table-cell" x="685" y="334" width="45" height="14"/>
+  <text class="table-text" x="707.5" y="344" text-anchor="middle">740.0</text>
+  <rect class="table-cell" x="730" y="334" width="50" height="14"/>
+  <text class="table-text" x="755.0" y="344" text-anchor="middle">9.194</text>
+  <rect class="table-cell" x="780" y="334" width="35" height="14"/>
+  <text class="table-text" x="797.5" y="344" text-anchor="middle">0.312</text>
+  <text class="subtitle" x="620" y="246" text-anchor="start">F#m Hole Schedule (positions from FOOT, ±0.020")</text>
+  <text class="subtitle" x="620" y="380" text-anchor="start">Tolerances</text>
+  <text class="small" x="620" y="394" text-anchor="start">• Hole positions: ±0.020" (tuning-critical)</text>
+  <text class="small" x="620" y="406" text-anchor="start">• Drone tenon: ±0.003" (fit-critical)</text>
+  <text class="small" x="620" y="418" text-anchor="start">• Wall at bore: ≥ 0.20" (struct min)</text>
+  <text class="small" x="620" y="430" text-anchor="start">• Bore axial alignment: 0.005" TIR</text>
+  <text class="small" x="620" y="442" text-anchor="start">• Inlay flush: <0.005" proud/recessed</text>
+  <text class="small" x="620" y="454" text-anchor="start">• Other shop tolerances: ±0.030"</text>
+  <text class="subtitle" x="620" y="470" text-anchor="start">Datum chain</text>
+  <text class="small" x="620" y="484" text-anchor="start">A — FOOT (open end, primary)</text>
+  <text class="small" x="620" y="496" text-anchor="start">B — WINDOW (splitting edge, sec.)</text>
+  <text class="small" x="620" y="508" text-anchor="start">C — DRONE SOCKET (tertiary)</text>
+  <rect class="titlebox" x="610" y="440" width="220" height="100"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="460.0" x2="830" y2="460.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="480.0" x2="830" y2="480.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="500.0" x2="830" y2="500.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="610" y1="520.0" x2="830" y2="520.0"/>
+  <line stroke="#000" stroke-width="0.5" x1="709.0" y1="440" x2="709.0" y2="540"/>
+  <text class="subtitle" x="615" y="453" text-anchor="start">TONY KOOP — MAKER NEXUS</text>
+  <text class="subtitle" x="714.0" y="453" text-anchor="start">DRN-Fsmm</text>
+  <text class="small" x="615" y="473.0" text-anchor="start">Drone Flute Family DRN-FAM-001</text>
+  <text class="small" x="714.0" y="473.0" text-anchor="start">Key: F#m</text>
+  <text class="small" x="615" y="493.0" text-anchor="start">f0 = 369.99 Hz · L = 24.987 in</text>
+  <text class="small" x="714.0" y="493.0" text-anchor="start">Units: inches</text>
+  <text class="small" x="615" y="513.0" text-anchor="start">Source: Drone-Flutes-Design.xlsx</text>
+  <text class="small" x="714.0" y="513.0" text-anchor="start">Scale: NTS</text>
+  <text class="small" x="615" y="533.0" text-anchor="start">Date: 2026-05-05  Rev: R0</text>
+  <text class="small" x="714.0" y="533.0" text-anchor="start">Sheet 1 of 1</text>
+</svg>

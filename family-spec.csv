@@ -1,0 +1,5 @@
+member_id,target_hz,target_note,scale_label,bore_id_in,total_length_in,body_od_in,facet_side_in,drone_bore_in,wood_species,k2_correction,done_bar_ref,notes
+DRN-Am,440.000,Am,Pentatonic minor,0.750,21.967,1.300,0.497,0.625,Black walnut (body) / Hard maple (inlay),piecewise — see Master_Inputs!K2 table,flutes,"NAF drone flute, swappable drone block (U/5/8). MIDI 69."
+DRN-Fsm,369.994,F#m,Pentatonic minor,0.875,24.987,1.425,0.549,0.750,Black walnut (body) / Hard maple (inlay),piecewise — see Master_Inputs!K2 table,flutes,"NAF drone flute, swappable drone block (U/5/8). MIDI 66."
+DRN-Em,329.628,Em,Pentatonic minor,1.000,27.225,1.550,0.601,0.875,Black walnut (body) / Hard maple (inlay),piecewise — see Master_Inputs!K2 table,flutes,"NAF drone flute, swappable drone block (U/5/8). MIDI 64."
+DRN-Dm,293.665,Dm,Pentatonic minor,1.125,29.824,1.675,0.652,1.000,Black walnut (body) / Hard maple (inlay),piecewise — see Master_Inputs!K2 table,flutes,"NAF drone flute, swappable drone block (U/5/8). MIDI 62."

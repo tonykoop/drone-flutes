@@ -1,0 +1,15 @@
+part_no,search_terms,candidate_supplier,url,date_checked,unit_price_usd,min_order,lead_time_days,substitute_acceptable,sourcing_risk,notes
+1.1,black walnut S4S 1.5x1.5x26 lumber,Hardwoods to Get,hardwoodstogo.com,TBD,22,1,7,"cherry, mahogany",low,Verify grain runout < 1:12.
+1.2,black walnut S4S 1.75x1.75x32,Hardwoods to Get,hardwoodstogo.com,TBD,30,1,7,"cherry, mahogany",low,Bigger blank for Em+Dm.
+1.3,hard maple thin stock 1/16 inch sheet,Bell Forest Products,bellforestproducts.com,TBD,8,1,5,"curly maple, holly",low,Resaw if 1/16 unavailable.
+1.4,hard maple figured 1/8 inch board,Bell Forest Products,bellforestproducts.com,TBD,14,1,5,"figured maple, birdseye maple",medium,Visual quality matters; pick personally if possible.
+1.6,black walnut 1.75x1.75 turning blank,Hardwoods to Get,hardwoodstogo.com,TBD,15,1,7,"cherry, padauk",low,12 drone blocks from one stick.
+2.1,natural latigo leather lacing 3/16,Tandy Leather,tandyleather.com,TBD,6,1,3,"rawhide, paracord",low,4 ft serves all 4 flutes.
+2.2,birchwood casey tru-oil 3oz,Brownells / Amazon,amazon.com,TBD,10,1,2,Watco danish oil,low,Multiple coats; 4-6 builds gloss.
+2.6,titebond ii premium wood glue 16oz,Hardware store,-,TBD,8,1,0,Titebond III,low,Type II offers water resistance + reasonable open time.
+2.7,starbond em-02 thin ca glue 2oz,Starbond,starbond.com,TBD,10,1,3,Bob Smith Industries thin,low,Match accelerator brand.
+3.1,1/16 inch upcut spiral 1/8 shank carbide,IDC Woodcraft,idcwoodcraft.com,TBD,22,1,3,Whiteside SCB-1,low,Critical for clean inlay edges.
+3.2,1/4 inch downcut spiral 1/4 shank carbide,IDC Woodcraft,idcwoodcraft.com,TBD,32,1,3,Whiteside RD-2160,low,-
+3.3,1/2 inch downcut spiral 1/2 shank carbide,IDC Woodcraft,idcwoodcraft.com,TBD,45,1,3,Whiteside RD-3300,low,-
+3.5,brad point drill bits 1/4 9/32 5/16 11/32,Lee Valley,leevalley.com,TBD,5.50,4,5,imperial drill set,low,Brad point reduces blowout.
+3.6,forstner bit 5/8 3/4 7/8 1 inch,Lee Valley,leevalley.com,TBD,12,4,5,sawtooth bit,low,Drone socket clean walls.

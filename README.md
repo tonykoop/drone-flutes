@@ -1,118 +1,92 @@
-# Drone Flutes — Native American Style, Set of Four
+# Drone Flutes
 
-A four-flute set in **F#m, Em, Dm, Am** — pentatonic minor (Mode 1/4) — built in **walnut with hard maple inlay**. Each flute has a **drone bore** alongside the melody bore so a single block-and-pair lacing produces both a sustained drone and a six-hole pentatonic melody. Three drone blocks per flute (unison, fifth, octave) let the voicing shift inside the same key.
+A four-member family of Native American style drone flutes — Am, F#m, Em, Dm — built on Tony's open-pipe parametric design pipeline, with hybrid CNC + lathe + facet construction and Broinwood-style geometric CNC inlay in hard maple over walnut bodies. Each flute ships with three swappable drone blocks (unison, fifth-below, octave-below) so the player can change drone tuning without touching the melody side.
 
-Inspired by the gallery work of [Elemental Flutes](https://elementalflutes.com/) and the CNC-inlay aesthetic of [Broinwood](https://www.instagram.com/broinwood/).
+This is `DRN-FAM-001` in the catalog, status **in-progress**.
 
-> *Hero image placeholder — replace `images/hero.jpg` with the four-flute group shot once finished.*
+> Aesthetic references: [Elemental Flutes gallery](https://elementalflutes.com/gallery) for the drone-flute form and [Broinwood](https://broinwood.com) for the inlay style. Engineering reference: the [`flutes`](https://github.com/tonykoop/flutes) repo for NAF K2 empirical corrections (150+ flute dataset).
 
----
+![Family overview](drawings/family-overview.svg)
 
-## What's in this repo
-
-| File | Purpose |
-|---|---|
-| [`Drone-Flutes-Design.xlsx`](Drone-Flutes-Design.xlsx) | Parametric design workbook. 6 sheets — Master_Inputs, Design_Table, Hole_Schedule, Wood_Library, Inlay_Layout. **Edit blue cells only**; everything else is a formula. |
-| [`Drone-Flutes-BOM-Build-Method.docx`](Drone-Flutes-BOM-Build-Method.docx) | Bill of materials, tools, toolpath table, and 13-phase build method. The shop-facing reference — print this and walk into the shop with it. |
-| [`sw-reference/Drone-Flutes-SolidWorks-MasterLayout.docx`](sw-reference/Drone-Flutes-SolidWorks-MasterLayout.docx) | SolidWorks master-layout reference. 38 global variables in snake_case identical to the Excel `Master_Inputs` sheet. Configurations are per-key only (Am, F#m, Em, Dm). |
-| [`inlay-patterns/`](inlay-patterns/) | CNC inlay artwork. One subfolder per key (Am, F#m, Em, Dm), each with `band1_chevron`, `band2_chevron`, `band3_diamond`, and `feature_constellation` in both `.svg` (preview) and `.dxf` (V-Carve import). |
-| [`risks.md`](risks.md) | Structured risks across acoustic / structural / ergonomic / supply / fit-finish, each with a verification test attached. |
-
----
-
-## How the design works
-
-The Excel workbook is the single source of truth for dimensions. Master_Inputs holds every global variable; every other cell in the workbook references those globals via formulas. SolidWorks reads the same workbook as a design table — so editing a global in Excel rebuilds all four configurations in CAD. There are no hand-edited dimensions anywhere downstream of `Master_Inputs`.
-
-The acoustic model is **open-open pipe** for both the melody bore and the drone bore. Hole positions come from the closed-form
+## What's in the box
 
 ```
-pos_from_foot = L_acoustic_corrected · (1 − fundamental_freq / hole_freq)
+.
+├── Drone-Flutes-Design.xlsx           ← parametric source of truth (284 formulas)
+├── Drone-Flutes-BOM-Build-Method.docx ← shop-floor build doc (v3-style companion)
+├── design.md                          ← physics + family narrative
+├── family-spec.csv                    ← row per family member, drives generators
+├── bom.csv · sourcing.csv             ← what to buy, where, for how much
+├── cut-list.csv · validation.csv      ← shop ops + tuning targets
+├── assembly-manual.md                 ← shop-floor cheat sheet
+├── supplier-rfq.md                    ← 3 RFQ drafts ready to send
+├── drawing-brief.md · visual-bom-brief.md
+├── wolfram-starter.wl                 ← interactive Wolfram notebook
+├── risks.md                           ← red-team failure-mode walk
+├── capstone-deck.pptx                 ← recruiter / collaborator deck
+├── print-packet.pdf                   ← shop-floor printable
+├── site/index.html                    ← recruiter-facing static site
+├── drawings/                          ← per-key SVG drawings + assembly + family-overview
+├── inlay-patterns/{Am,Fsm,Em,Dm}/    ← 16 DXF + 16 SVG inlay patterns
+├── sw-reference/                      ← SolidWorks master layout reference
+├── cad/, cnc/, images/, data/        ← placeholders for binary assets
+└── capstone-manifest.json             ← machine-readable manifest of everything above
 ```
 
-with end corrections applied at both the foot and the window. Wall thickness, bore diameter, and chamber-to-bore ratio sit inside the empirically-validated NAF range Tony has built within for 150+ flutes.
+## How it's built
 
-The drone is set in semitone offsets from the fundamental (default 0 = unison). Three drone blocks per flute let the player choose:
+1. **Excel `Master_Inputs` sheet** is the single edit surface for every dimension. Blue cells are inputs; black cells are formulas. Names match the SolidWorks global variables exactly.
+2. **SolidWorks** reads from Excel via a linked design table (configurations: Am, F#m, Em, Dm). Master sketch on the Front plane drives every other sketch via convert-entities and pierce relations.
+3. **CNC G-code** is generated in V-Carve from SolidWorks DXFs. Bore profile (1/4 downcut) → SAC pocket → splitting edge (1/16 upcut climb) → octagon facet pass (1/2 downcut, V-block jig) → inlay pockets (1/16 upcut) → finger holes (drill press, brad-point bits).
+4. **Lathe** turns each glued blank to `body_OD_round` between centers; faceting then brings it to `body_OD_flat`.
+5. **Drone blocks** are lathe-turned with a 0.75" tenon at 0.005" slip-fit clearance. Three blocks per flute (U / 5 / 8) for swappable drone tuning.
 
-- **Unison** — drone matches the fundamental
-- **Fifth** — drone is 7 semitones below
-- **Octave** — drone is 12 semitones below
+## Family table
 
-Switching blocks recasts the same flute as a different musical voice without any tuning change.
+| Member | Key | f₀ (Hz) | bore_ID | L_total | Chamber:bore |
+|---|---|---|---|---|---|
+| DRN-Am  | Am  | 440.000 | 0.750" | 21.97 in | 20.4 |
+| DRN-Fsm | F#m | 369.994 | 0.875" | 24.99 in | 21.0 |
+| DRN-Em  | Em  | 329.628 | 1.000" | 27.23 in | 20.7 |
+| DRN-Dm  | Dm  | 293.665 | 1.125" | 29.82 in | 20.8 |
 
----
+All chamber:bore ratios sit in Tony's 17–21 sweet spot. Hole positions follow `pos_from_foot = L_acoustic_corrected × (1 − f₀/f_hole)` with K2 piecewise correction by bore size.
 
-## Build summary
+## Sister repos
 
-The 13-phase build is in [`Drone-Flutes-BOM-Build-Method.docx`](Drone-Flutes-BOM-Build-Method.docx). High-level flow:
+This packet is part of Tony's open-pipe woodwind cluster. Cross-references:
 
-1. **Phase 0–1:** Design verification, stock prep, blank acclimation (7 days minimum).
-2. **Phase 2–3:** Split-body CNC for bore + slow-air chamber, then glue-up.
-3. **Phase 4–5:** Lathe-round body to OD, then CNC-facet to octagon (8 facets, 22.5° V-block jig).
-4. **Phase 6–7:** Drill tone holes (Forstner brad-points), cut window and shape splitting edge.
-5. **Phase 8:** CNC inlay — pocket + plug, 0.002" interference fit. Three bands per facet plus one feature panel.
-6. **Phase 9–10:** Turn drone blocks (unison/fifth/octave) and laser-engrave bird blocks.
-7. **Phase 11–12:** Finish (Tru-Oil, 4–6 coats, 7-day cure), final tuning by ear with chromatic tuner.
+- [`flutes`](https://github.com/tonykoop/flutes) — NAF family + K2 corrections (engineering reference)
+- [`fujara`](https://github.com/tonykoop/fujara) — Slovak overtone flute (related physics)
+- [`transverse-flute`](https://github.com/tonykoop/transverse-flute) — slip-cast transverse flute family
+- [`shakuhachi`](https://github.com/tonykoop/shakuhachi)
 
-Estimated time: **60–80 shop hours over 4–6 weeks** (acclimation and finish cure dominate calendar time).
-Estimated cost: **$516** for the set of 4 (wood + hardware + tooling already on hand at Maker Nexus).
+For the cross-cluster catalog see `instrument-maker-v4` skill `references/repo-relationships.yaml`.
 
----
+## Skill index used
 
-## Family relationships
+- [instrument-maker-v4](https://...) — orchestrator + specialist sub-agents (acoustician, manufacturing-planner, documentarian, verifier, red-team)
+- [xlsx](https://...) — Drone-Flutes-Design.xlsx
+- [docx](https://...) — SolidWorks reference + BOM doc
+- [pptx](https://...) — capstone-deck.pptx
+- [pdf](https://...) — print-packet.pdf
 
-| Key | MIDI | f₀ (Hz) | L_total (in) | Facet side (in) |
-|---|---|---|---|---|
-| **Am**  | 69 | 440.0  | 21.967 | 0.497 |
-| **F#m** | 66 | 369.99 | ~25.4  | 0.572 |
-| **Em**  | 64 | 329.63 | ~27.6  | 0.620 |
-| **Dm**  | 62 | 293.66 | 29.824 | 0.652 |
+## Roadmap
 
-Family scaling follows open-open pipe: `L ∝ 1/f`. F#m bore is ~1.19× Am; Dm bore is ~1.36× Am.
-
----
-
-## Why these four keys
-
-Tony's playing repertoire centers on these four keys; the set covers most session work without a key change. From a build economy perspective, the four sit at musically-spaced intervals (m3 + m2 + m2) so no two are close enough to confuse, and the cumulative material order fits a single trip to lumber for walnut + maple stock.
-
-The pentatonic minor scale (semitone offsets {0, 3, 5, 7, 10, 12}) is the NAF tradition — it is the *Mode 1/4 pentatonic* in the cross-tab `Mode 1&4 Pent.` reference sheet of `Musical Instruments V2.xlsx` and the standard layout for North American flute makers.
-
----
-
-## Inlay design
-
-Eight facets per flute means eight identical chevron bands at three vertical positions (15%, 50%, 82% from foot), plus one feature constellation panel on a single chosen facet (between band 2 and band 3, just below the bird block). Geometry is parametric to the facet width per key:
-
-- Lower & center bands: chevron pattern, 0.060" pocket depth
-- Upper band: diamond + corner-dot pattern, 0.060" depth
-- Feature panel: stylized 7-star constellation with directional arrow, 0.080" depth
-
-All artwork generates from the [`inlay-patterns/`](inlay-patterns/) folder, sized per key. Plug stock is 1/16" hard maple. Pocket is cut at -0.001" inside offset; plug at +0.001" outside offset → 0.002" interference fit. Apply thin CA glue, press, sand flush.
-
----
-
-## Tooling & shop
-
-Built at [Maker Nexus](https://www.makernexus.org/) (Sunnyvale, CA) on:
-- ShopBot CNC router (4×8 bed) — bore, faceting, inlay
-- 12" wood lathe — body rounding and drone blocks
-- Epilog laser — bird-block totem engraving
-- Drill press, bandsaw, jointer, planer, table saw, drum sander
-
-Plus Tony's home shop:
-- SolidWorks (parametric CAD with design tables)
-- Vectric V-Carve (CAM for ShopBot)
-- Standard hand tools, chromatic tuner
-
----
-
-## Sister projects in the workshop
-
-This drone-flute set sits alongside Tony's other instrument work at [github.com/tonykoop](https://github.com/tonykoop) — see the [`flutes`](https://github.com/tonykoop/flutes), [`fujara`](https://github.com/tonykoop/fujara), and [`tongue-drum`](https://github.com/tonykoop/tongue-drum) repos for the broader portfolio. The acoustic physics and empirical NAF corrections used here come from the [`instrument-maker`](https://github.com/tonykoop/instrument-maker) skill (v4), which encodes the K2 bore-correction table, scale-pattern conventions, and material K-constants used throughout these designs.
-
----
+- [x] Excel design workbook with 284 formulas and 6 sheets
+- [x] SolidWorks reference doc with global variables + design table setup
+- [x] BOM + Build Method doc (v3-style companion)
+- [x] CNC inlay patterns: 4 keys × 4 patterns × 2 formats = 32 files
+- [x] v4 deliverables: design.md, family-spec, BOM/sourcing/cut/validation CSVs, assembly manual, RFQ, briefs, Wolfram starter, risks, capstone deck, print packet, site
+- [ ] Build flute 1 (F#m) and tune-validate
+- [ ] Update K2 corrections from measured data via `record_measurement.py`
+- [ ] Photograph all 4 finished flutes for hero image
+- [ ] Publish `site/` to GitHub Pages
 
 ## License
 
-MIT for the design workbook, build documentation, and inlay artwork. See [`LICENSE`](LICENSE).
+See [LICENSE](LICENSE).
+
+## Contact
+
+Tony Koop · tonykoop@gmail.com
