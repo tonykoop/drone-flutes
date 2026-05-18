@@ -18,6 +18,9 @@ This is `DRN-FAM-001` in the catalog, status **in-progress**.
 ├── family-spec.csv                    ← row per family member, drives generators
 ├── bom.csv · sourcing.csv             ← what to buy, where, for how much
 ├── cut-list.csv · validation.csv      ← shop ops + tuning targets
+├── dxf-shop-authority.md              ← DXF/CAD authority checklist and blockers
+├── shop-validation-gates.csv          ← drone tuning, breath response, tolerance gates
+├── visual-output-register.csv         ← drawing/inlay visual authority ledger
 ├── assembly-manual.md                 ← shop-floor cheat sheet
 ├── supplier-rfq.md                    ← 3 RFQ drafts ready to send
 ├── drawing-brief.md · visual-bom-brief.md
@@ -27,7 +30,7 @@ This is `DRN-FAM-001` in the catalog, status **in-progress**.
 ├── print-packet.pdf                   ← shop-floor printable
 ├── site/index.html                    ← recruiter-facing static site
 ├── drawings/                          ← per-key SVG drawings + assembly + family-overview
-├── inlay-patterns/{Am,Fsm,Em,Dm}/    ← 16 DXF + 16 SVG inlay patterns
+├── inlay-patterns/{Am,Fsharpm,Em,Dm}/ ← 16 DXF + 16 SVG inlay patterns
 ├── sw-reference/                      ← SolidWorks master layout reference
 ├── cad/, cnc/, images/, data/        ← placeholders for binary assets
 └── capstone-manifest.json             ← machine-readable manifest of everything above
@@ -40,6 +43,15 @@ This is `DRN-FAM-001` in the catalog, status **in-progress**.
 3. **CNC G-code** is generated in V-Carve from SolidWorks DXFs. Bore profile (1/4 downcut) → SAC pocket → splitting edge (1/16 upcut climb) → octagon facet pass (1/2 downcut, V-block jig) → inlay pockets (1/16 upcut) → finger holes (drill press, brad-point bits).
 4. **Lathe** turns each glued blank to `body_OD_round` between centers; faceting then brings it to `body_OD_flat`.
 5. **Drone blocks** are lathe-turned with a 0.75" tenon at 0.005" slip-fit clearance. Three blocks per flute (U / 5 / 8) for swappable drone tuning.
+
+## DXF/shop authority boundary
+
+The current repo has decorative inlay DXFs under `inlay-patterns/`, but no
+released body, bore, finger-hole, SAC/window, drone-block, socket, or fixture
+DXF/CAD files in the checkout. Use `dxf-shop-authority.md` as the shop handoff
+checklist before cutting acoustic geometry. The inlay DXFs may guide decorative
+inlay layout only; they do not control tuning, bore geometry, tone-hole
+placement, breath response, drone-block fit, or flute-body tolerances.
 
 ## Family table
 
