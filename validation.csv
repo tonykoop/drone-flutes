@@ -39,3 +39,9 @@ DRN-Dm,oct,587.330,5,,,,,,,
 DRN-Dm,drone-unison,293.665,5,,,,,,,
 DRN-Dm,drone-fifth-below,195.998,5,,,,,,,
 DRN-Dm,drone-octave-below,146.833,5,,,,,,,
+SHOP-AUTH,body-bore-dxf-revision,,,,,,,pending,Do not cut acoustic body geometry until body/bore/tone-hole/drone-block DXF or CAD exports are present and revision-matched to Drone-Flutes-Design.xlsx.
+SHOP-AUTH,decorative-inlay-separation,,,,,,,pending,Keep inlay-patterns DXFs decorative-only; they do not control tuning bore hole socket or breath-response geometry.
+SHOP-TUNE,drone-block-swap-response,,,,,,,measurement_required,Record unison fifth-below and octave-below drone response for each member before claiming validated drone tuning.
+SHOP-BREATH,windway-sac-response,,,,,,,measurement_required,Record onset pressure breath noise choking overblow and stable tone behavior after SAC/window/bird fit is built.
+SHOP-FAB,tenon-socket-slip-fit,,,,,,,measurement_required,Verify 0.005 in drone-block slip fit clearance with calipers and go/no-go feel before batch machining all blocks.
+SHOP-FAB,body-facet-registration,,,,,,,measurement_required,Verify facet datum indexing and inlay pocket registration on scrap or first article before decorative inlay cutting.
