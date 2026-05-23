@@ -63,3 +63,6 @@ data/measurements/*.csv  # raw tuning measurements (PII-free but bulky)
 images/raw/             # high-res unedited photos
 cad/*.SLDPRT.bak
 cnc/*.bak
+
+# Stash-recovery sidecars
+stash-recovered-*/
