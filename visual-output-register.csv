@@ -21,3 +21,4 @@ DXF-INLAY-DM-001,inlay-patterns/Dm/band1_chevron.dxf,dxf,finish_study,concept_on
 DXF-INLAY-DM-002,inlay-patterns/Dm/band2_chevron.dxf,dxf,finish_study,concept_only,,none,false,"Decorative inlay artwork only; not acoustic body bore tone-hole socket or fixture authority."
 DXF-INLAY-DM-003,inlay-patterns/Dm/band3_diamond.dxf,dxf,finish_study,concept_only,,none,false,"Decorative inlay artwork only; not acoustic body bore tone-hole socket or fixture authority."
 DXF-INLAY-DM-004,inlay-patterns/Dm/feature_constellation.dxf,dxf,finish_study,concept_only,,none,false,"Decorative inlay artwork only; not acoustic body bore tone-hole socket or fixture authority."
+PDF-001,print-packet.pdf,print_packet,communication,derived_preview,design.md bom.csv family-spec.csv,none,false,"Print packet for packet review; fabrication callouts must be verified against workbook cells and reviewed DXF/CAD before shop use. Derived preview only."

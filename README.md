@@ -2,7 +2,9 @@
 
 A four-member family of Native American style drone flutes — Am, F#m, Em, Dm — built on Tony's open-pipe parametric design pipeline, with hybrid CNC + lathe + facet construction and Broinwood-style geometric CNC inlay in hard maple over walnut bodies. Each flute ships with three swappable drone blocks (unison, fifth-below, octave-below) so the player can change drone tuning without touching the melody side.
 
-This is `DRN-FAM-001` in the catalog, status **in-progress**.
+This is `DRN-FAM-001` in the catalog.
+
+**Status: L2 V5 build-packet candidate** — DXF-first shop-handoff authority chain documented; acoustic body and drone-block DXF/CAD exports are still required before CNC routing (DXF-REV-001, FAB-BORE-009 blocked). All melody-tuning validation.csv rows are measurement-required pending first-article build.
 
 > Aesthetic references: [Elemental Flutes gallery](https://elementalflutes.com/gallery) for the drone-flute form and [Broinwood](https://broinwood.com) for the inlay style. Engineering reference: the [`flutes`](https://github.com/tonykoop/flutes) repo for NAF K2 empirical corrections (150+ flute dataset).
 

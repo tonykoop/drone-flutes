@@ -45,3 +45,5 @@ SHOP-TUNE,drone-block-swap-response,,,,,,,measurement_required,Record unison fif
 SHOP-BREATH,windway-sac-response,,,,,,,measurement_required,Record onset pressure breath noise choking overblow and stable tone behavior after SAC/window/bird fit is built.
 SHOP-FAB,tenon-socket-slip-fit,,,,,,,measurement_required,Verify 0.005 in drone-block slip fit clearance with calipers and go/no-go feel before batch machining all blocks.
 SHOP-FAB,body-facet-registration,,,,,,,measurement_required,Verify facet datum indexing and inlay pocket registration on scrap or first article before decorative inlay cutting.
+DXF-AUTH,acoustic-body-dxf-gate,,,,,,,blocked,DXF-REV-001: acoustic body bore tone-hole socket and drone-block DXF/CAD exports are missing. Do not run CNC or lathe on acoustic geometry until reviewed exports match Drone-Flutes-Design.xlsx revision and pass dxf-shop-authority.md checklist.
+DXF-AUTH,visual-register-status,,,,,,,pass,DXF-INLAY-002: all inlay DXFs registered as concept_only in visual-output-register.csv; print-packet.pdf registered as derived_preview.
