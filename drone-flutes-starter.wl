@@ -126,7 +126,7 @@ Print[Grid[Prepend[holeSchedule, {"Hole","semitone offset","Hz","pos from foot (
 (* ::Subsection:: *)
 (* Interactive Manipulate panel — sweep key + drone offset *)
 
-Manipulate[
+droneFluteExplorer = Manipulate[
   Module[{midi, bore, wall, family, holes, freq},
     family = familyTable;
     midi = members[selectedKeyDyn]["midi"];
