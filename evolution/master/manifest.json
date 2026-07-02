@@ -1,0 +1,42 @@
+{
+  "product": "drone-flutes",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "rev-A (pre-commit intake, 2026-07-01)",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/drone-flutes.scad",
+      "format": "openscad-source",
+      "sha256": "05f84ff9b06209cb90c3cb4582ba9f86a4075b30f41d5fecbc404bded7124ddd",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "First parametric master for this repo. Melody bore + drone bore + octagon body/facet envelope, equation-driven pentatonic-minor tone-hole schedule. Duct/fipple/window/voicing geometry out of scope."
+    },
+    {
+      "path": "family-spec.csv",
+      "format": "design-table",
+      "sha256": "1cfbed45703db40fa902f2bde1a24349374f9bfefdf9ba2f1b1fe5c1240d1253",
+      "authority": "fabrication",
+      "lossy": false,
+      "notes": "Row-per-member family table (bore_id_in, total_length_in, body_od_in, facet_side_in, drone_bore_in); drives the .scad and the auto-generators."
+    },
+    {
+      "path": "Drone-Flutes-Design.xlsx",
+      "format": "design-table",
+      "sha256": "d3b784c738a0f81cb7581b918f8eaa2f04b11650797b9905257d2063148a2dca",
+      "authority": "fabrication",
+      "lossy": false,
+      "notes": "Parametric source of truth (284 formulas, Master_Inputs sheet); current dimensional authority for the whole family."
+    },
+    {
+      "path": "drone-flutes-starter.wl",
+      "format": "wolfram-source",
+      "sha256": "d6b42b616f233be1520b5795d890a6215a076aef694cc262d2872032f784892c",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Source-only (not executed this pass); L2 evidence. Deployed read-only to Wolfram Cloud and embedded live in explorer.html."
+    }
+  ],
+  "notes": "No body/bore/tone-hole/drone-block DXF or CAD export is released yet (dxf-shop-authority.md still lists these as missing; DXF-REV-001 and FAB-BORE-009 remain blocked). cad/drone-flutes.scad is a new envelope master, not a substitute for that reviewed export chain. Gate A (Alpha workspace compile) not yet run."
+}

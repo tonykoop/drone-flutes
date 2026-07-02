@@ -4,7 +4,7 @@ A four-member family of Native American style drone flutes — Am, F#m, Em, Dm �
 
 This is `DRN-FAM-001` in the catalog.
 
-**Status: L2 V5 build-packet candidate** — DXF-first shop-handoff authority chain documented; acoustic body and drone-block DXF/CAD exports are still required before CNC routing (DXF-REV-001, FAB-BORE-009 blocked). All melody-tuning validation.csv rows are measurement-required pending first-article build.
+**Status:** L2 V5 build-packet candidate — DXF-first shop-handoff authority chain documented; acoustic body and drone-block DXF/CAD exports are still required before CNC routing (DXF-REV-001, FAB-BORE-009 blocked). All melody-tuning validation.csv rows are measurement-required pending first-article build.
 
 > Aesthetic references: [Elemental Flutes gallery](https://elementalflutes.com/gallery) for the drone-flute form and [Broinwood](https://broinwood.com) for the inlay style. Engineering reference: the [`flutes`](https://github.com/tonykoop/flutes) repo for NAF K2 empirical corrections (150+ flute dataset).
 
@@ -34,7 +34,9 @@ This is `DRN-FAM-001` in the catalog.
 ├── drawings/                          ← per-key SVG drawings + assembly + family-overview
 ├── inlay-patterns/{Am,Fsharpm,Em,Dm}/ ← 16 DXF + 16 SVG inlay patterns
 ├── sw-reference/                      ← SolidWorks master layout reference
-├── cad/, cnc/, images/, data/        ← placeholders for binary assets
+├── cad/drone-flutes.scad              ← bore + tone-hole-schedule envelope master (pending_measurement; duct/fipple out of scope)
+├── cnc/, images/, data/               ← placeholders for binary assets
+├── evolution/                         ← Stage-0 evolution-pipeline intake (master manifest, design intent, revisions)
 └── capstone-manifest.json             ← machine-readable manifest of everything above
 ```
 
